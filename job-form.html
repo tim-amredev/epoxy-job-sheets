@@ -1,0 +1,199 @@
+---
+layout: default
+title: Job Form
+---
+
+<section class="page-header">
+  <div class="container">
+    <h1>Epoxy Floor Job Sheet</h1>
+  </div>
+</section>
+
+<section class="form-section">
+  <div class="container">
+    <p class="form-intro">Please complete all required fields (*) to submit your job information.</p>
+    
+    <form action="https://formsubmit.co/your-email@example.com" method="POST" class="job-form" enctype="multipart/form-data">
+      <!-- FormSubmit configuration -->
+      <input type="hidden" name="_captcha" value="true">
+      <input type="hidden" name="_subject" value="New Epoxy Floor Job Sheet Submission">
+      <input type="hidden" name="_next" value="{{ '/thank-you' | absolute_url }}">
+      
+      <!-- Job Information Section -->
+      <div class="form-section-header full-width">
+        <h2>Job Information</h2>
+      </div>
+      
+      <div class="form-group">
+        <label for="job-name">Job Name & Number *</label>
+        <input type="text" id="job-name" name="job-name" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="job-date">Date *</label>
+        <input type="date" id="job-date" name="job-date" required>
+      </div>
+      
+      <div class="form-group full-width">
+        <label for="crew-names">Crew Names *</label>
+        <input type="text" id="crew-names" name="crew-names" placeholder="Enter all crew member names separated by commas" required>
+      </div>
+      
+      <!-- Job Measurements Section -->
+      <div class="form-section-header full-width">
+        <h2>Job Measurements</h2>
+      </div>
+      
+      <div class="form-group">
+        <label for="total-hours">Total Hours Worked *</label>
+        <input type="number" id="total-hours" name="total-hours" min="0" step="0.5" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="total-sq-ft">Total Sq Ft *</label>
+        <input type="number" id="total-sq-ft" name="total-sq-ft" min="0" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="vertical-sq-ft">Total Vertical Sq Ft (0 If None) *</label>
+        <input type="number" id="vertical-sq-ft" name="vertical-sq-ft" min="0" value="0" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="linear-ft-cracks">Total Linear Ft Cracks Filled</label>
+        <input type="number" id="linear-ft-cracks" name="linear-ft-cracks" min="0" value="0">
+      </div>
+      
+      <div class="form-group">
+        <label for="sq-ft-high-impact">Total Sq Ft High Impact</label>
+        <input type="number" id="sq-ft-high-impact" name="sq-ft-high-impact" min="0" value="0">
+      </div>
+      
+      <!-- Product Information Section -->
+      <div class="form-section-header full-width">
+        <h2>Product Information</h2>
+      </div>
+      
+      <div class="form-group">
+        <label for="product-type">Product Type *</label>
+        <select id="product-type" name="product-type" required>
+          <option value="">Select Product Type</option>
+          <option value="Epoxy">Epoxy</option>
+          <option value="Polyaspartic">Polyaspartic</option>
+          <option value="Polyurethane">Polyurethane</option>
+          <option value="Hybrid System">Hybrid System</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="first-color">1st Color *</label>
+        <input type="text" id="first-color" name="first-color" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="second-color">2nd Color</label>
+        <input type="text" id="second-color" name="second-color">
+      </div>
+      
+      <div class="form-group">
+        <label for="third-color">3rd Color</label>
+        <input type="text" id="third-color" name="third-color">
+      </div>
+      
+      <div class="form-group">
+        <label for="product-amount">Amount of Product Used (Total) *</label>
+        <input type="number" id="product-amount" name="product-amount" min="0" step="0.1" required>
+      </div>
+      
+      <!-- Product Quantities Section -->
+      <div class="form-section-header full-width">
+        <h2>Product Quantities</h2>
+      </div>
+      
+      <div class="form-group">
+        <label for="diamond-blend">Diamond Blend (# Gallons)</label>
+        <input type="number" id="diamond-blend" name="diamond-blend" min="0" step="0.1" value="0">
+      </div>
+      
+      <div class="form-group">
+        <label for="hpp-2000">HPP 2000 (# Gallons)</label>
+        <input type="number" id="hpp-2000" name="hpp-2000" min="0" step="0.1" value="0">
+      </div>
+      
+      <div class="form-group">
+        <label for="novoxy-uw15">Novoxy UW-15 (# Gallons)</label>
+        <input type="number" id="novoxy-uw15" name="novoxy-uw15" min="0" step="0.1" value="0">
+      </div>
+      
+      <div class="form-group">
+        <label for="pigment">Pigment Color & Amount Used (# Quarts)</label>
+        <input type="text" id="pigment" name="pigment" placeholder="e.g., Red - 2 quarts">
+      </div>
+      
+      <div class="form-group">
+        <label for="turbo-patch">Turbo Patch Kit (# oz)</label>
+        <input type="number" id="turbo-patch" name="turbo-patch" min="0" value="0">
+      </div>
+      
+      <div class="form-group">
+        <label for="crack-eliminator">Crack Eliminator (# Tubes)</label>
+        <input type="number" id="crack-eliminator" name="crack-eliminator" min="0" value="0">
+      </div>
+      
+      <div class="form-group">
+        <label for="ultra-patch">Ultra Patch Kit (# oz)</label>
+        <input type="number" id="ultra-patch" name="ultra-patch" min="0" value="0">
+      </div>
+      
+      <div class="form-group">
+        <label for="horizontal-epoxy">Horizontal Epoxy (# Gallons)</label>
+        <input type="number" id="horizontal-epoxy" name="horizontal-epoxy" min="0" step="0.1" value="0">
+      </div>
+      
+      <div class="form-group">
+        <label for="acetone">Acetone (# Gallons)</label>
+        <input type="number" id="acetone" name="acetone" min="0" step="0.1" value="0">
+      </div>
+      
+      <div class="form-group full-width">
+        <label for="other-products">Other Products</label>
+        <textarea id="other-products" name="other-products" rows="3" placeholder="List any other products used and their quantities"></textarea>
+      </div>
+      
+      <!-- Job Photos Section -->
+      <div class="form-section-header full-width">
+        <h2>Job Photos</h2>
+      </div>
+      
+      <div class="form-group full-width">
+        <label for="before-pictures">Before Job Pictures *</label>
+        <p class="form-help-text">Upload multiple photos showing the condition before work began</p>
+        <input type="file" id="before-pictures" name="before-pictures" multiple accept="image/*" required>
+      </div>
+      
+      <div class="form-group full-width">
+        <label for="progress-pictures">Job Progress Pictures *</label>
+        <p class="form-help-text">Upload multiple photos showing the work in progress</p>
+        <input type="file" id="progress-pictures" name="progress-pictures" multiple accept="image/*" required>
+      </div>
+      
+      <div class="form-group full-width">
+        <label for="completion-pictures">Job Completion Pictures *</label>
+        <p class="form-help-text">Upload multiple photos showing the completed job</p>
+        <input type="file" id="completion-pictures" name="completion-pictures" multiple accept="image/*" required>
+      </div>
+      
+      <!-- Additional Notes Section -->
+      <div class="form-group full-width">
+        <label for="additional-notes">Additional Notes</label>
+        <textarea id="additional-notes" name="additional-notes" rows="4" placeholder="Any additional information about the job"></textarea>
+      </div>
+      
+      <div class="form-group full-width">
+        <button type="submit" class="btn btn-primary">Submit Job Form</button>
+      </div>
+    </form>
+  </div>
+</section>
+
