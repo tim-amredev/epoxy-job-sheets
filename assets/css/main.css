@@ -70,14 +70,14 @@ img {
 
 /* Logo Styling */
 .logo-image {
-  max-height: 60px;
+  max-height: 80px;
   width: auto; /* This ensures the width adjusts proportionally to the height */
   object-fit: contain; /* This ensures the image maintains its aspect ratio */
   background-color: transparent;
 }
 
 .footer-logo .logo-image {
-  max-height: 50px;
+  max-height: 60px;
 }
 
 /* Typography */
