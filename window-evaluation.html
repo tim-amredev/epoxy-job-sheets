@@ -19,6 +19,10 @@ patriotic_page: true
       <input type="hidden" name="_captcha" value="true">
       <input type="hidden" name="_subject" value="New Window Evaluation Form Submission">
       <input type="hidden" name="_next" value="{{ '/epoxy-job-sheets/thank-you' | absolute_url }}">
+      <!-- Honeypot field to prevent spam -->
+      <input type="text" name="_honey" style="display:none">
+      <!-- Disable FormSubmit's default captcha page -->
+      <input type="hidden" name="_template" value="table">
       
       <!-- Basic Information Section -->
       <div class="form-section-header patriotic-header">
@@ -184,15 +188,19 @@ patriotic_page: true
       </div>
       
       <div class="form-group full-width patriotic-field">
-        <label class="required" for="overview-photos">Overview Photos</label>
-        <p class="form-help-text">Upload multiple photos showing the windows from inside and outside</p>
-        <input type="file" id="overview-photos" name="overview-photos" multiple accept="image/*" required>
+        <label for="overview-photos">Overview Photos</label>
+        <p class="form-help-text">Upload photos showing the windows from inside and outside (max 10MB total)</p>
+        <input type="file" id="overview-photos" name="overview-photos" accept="image/*">
+        <p class="form-help-text">For multiple photos, please upload to a service like Google Drive and share the link below</p>
+        <input type="text" id="overview-photos-link" name="overview-photos-link" placeholder="Paste your photo link here">
       </div>
       
       <div class="form-group full-width patriotic-field">
-        <label class="required" for="damage-photos">Damage Photos (if applicable)</label>
-        <p class="form-help-text">Upload photos showing specific damage issues</p>
-        <input type="file" id="damage-photos" name="damage-photos" multiple accept="image/*">
+        <label for="damage-photos">Damage Photos (if applicable)</label>
+        <p class="form-help-text">Upload photos showing specific damage issues (max 10MB total)</p>
+        <input type="file" id="damage-photos" name="damage-photos" accept="image/*">
+        <p class="form-help-text">For multiple photos, please upload to a service like Google Drive and share the link below</p>
+        <input type="text" id="damage-photos-link" name="damage-photos-link" placeholder="Paste your photo link here">
       </div>
       
       <!-- Additional Notes Section -->
