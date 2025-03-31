@@ -23,6 +23,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })
 
+  // Mobile dropdown toggle
+  const dropdownToggles = document.querySelectorAll(".dropdown-toggle")
+
+  dropdownToggles.forEach((toggle) => {
+    toggle.addEventListener("click", function (e) {
+      if (window.innerWidth <= 768) {
+        e.preventDefault()
+        this.closest(".dropdown").classList.toggle("active")
+      }
+    })
+  })
+
   // Form validation
   const forms = document.querySelectorAll("form")
 
