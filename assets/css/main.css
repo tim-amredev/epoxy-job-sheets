@@ -53,6 +53,18 @@ img {
   height: auto;
 }
 
+/* Logo Styling */
+.logo-image {
+  max-height: 80px;
+  width: auto; /* This ensures the width adjusts proportionally to the height */
+  object-fit: contain; /* This ensures the image maintains its aspect ratio */
+  background-color: transparent;
+}
+
+.footer-logo .logo-image {
+  max-height: 70px;
+}
+
 /* Typography */
 h1,
 h2,
