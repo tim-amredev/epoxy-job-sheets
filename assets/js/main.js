@@ -59,6 +59,30 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
+  // File size validation
+  const fileInputs = document.querySelectorAll('input[type="file"]')
+  const MAX_FILE_SIZE = 5 * 1024 * 1024 // 5MB in bytes
+
+  fileInputs.forEach((input) => {
+    const sizeWarning = document.createElement("div")
+    sizeWarning.className = "file-size-warning"
+    sizeWarning.style.display = "none"
+    sizeWarning.style.color = "#ff0000"
+    sizeWarning.style.marginTop = "5px"
+    sizeWarning.textContent = "Warning: File exceeds 5MB limit. Please use a smaller file or provide a link instead."
+
+    input.parentNode.insertBefore(sizeWarning, input.nextSibling)
+
+    input.addEventListener("change", function () {
+      const file = this.files[0]
+      if (file && file.size > MAX_FILE_SIZE) {
+        sizeWarning.style.display = "block"
+      } else {
+        sizeWarning.style.display = "none"
+      }
+    })
+  })
+
   // Conditional fields in concrete evaluation form
   const concreteConditionalFields = {
     pitting: "pitting-sq-ft",
