@@ -7,7 +7,10 @@ title: Home
   <div class="container">
     <h1>Epoxy Floor Job Sheets</h1>
     <p>Internal system for submitting and tracking job information</p>
-    <a href="{{ '/job-form' | relative_url }}" class="btn btn-primary">Submit New Job Sheet</a>
+    <div class="hero-buttons">
+      <a href="{{ '/job-form' | relative_url }}" class="btn btn-primary">Submit Job Sheet</a>
+      <a href="{{ '/concrete-evaluation' | relative_url }}" class="btn btn-secondary">Concrete Evaluation</a>
+    </div>
   </div>
 </section>
 
@@ -16,19 +19,21 @@ title: Home
     <h2>Job Sheet System</h2>
     <div class="service-grid">
       <div class="service-card">
-        <i class="fas fa-clipboard-list"></i>
-        <h3>Submit Job Details</h3>
-        <p>Record all job information including measurements, materials used, and photos.</p>
+        <i class="fas fa-hard-hat"></i>
+        <h3>For Installers</h3>
+        <p>Submit detailed job sheets with measurements, materials used, and photos.</p>
+        <a href="{{ '/job-form' | relative_url }}" class="btn btn-sm">Job Sheet Form</a>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-clipboard-check"></i>
+        <h3>For Brand Reps</h3>
+        <p>Evaluate concrete conditions and document findings for project planning.</p>
+        <a href="{{ '/concrete-evaluation' | relative_url }}" class="btn btn-sm">Concrete Evaluation</a>
       </div>
       <div class="service-card">
         <i class="fas fa-camera"></i>
-        <h3>Upload Photos</h3>
-        <p>Document your work with before, progress, and completion photos for each job.</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-chart-line"></i>
-        <h3>Track Materials</h3>
-        <p>Keep accurate records of all materials and products used on each job.</p>
+        <h3>Photo Documentation</h3>
+        <p>Upload before, during, and after photos to document all aspects of your work.</p>
       </div>
     </div>
   </div>
@@ -36,9 +41,11 @@ title: Home
 
 <section class="cta">
   <div class="container">
-    <h2>Ready to submit your latest job?</h2>
-    <p>Use our standardized form to ensure all job details are properly recorded.</p>
-    <a href="{{ '/job-form' | relative_url }}" class="btn btn-secondary">Submit Job Sheet</a>
+    <h2>Ready to submit your latest information?</h2>
+    <p>Use our standardized forms to ensure all details are properly recorded.</p>
+    <div class="cta-buttons">
+      <a href="{{ '/job-form' | relative_url }}" class="btn btn-primary">Submit Job Sheet</a>
+      <a href="{{ '/concrete-evaluation' | relative_url }}" class="btn btn-secondary">Concrete Evaluation</a>
+    </div>
   </div>
 </section>
-
