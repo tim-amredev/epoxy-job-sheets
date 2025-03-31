@@ -1,0 +1,355 @@
+---
+layout: default
+title: Roof Evaluation Form
+---
+
+<section class="page-header patriotic-header">
+  <div class="container">
+    <h1>Roof Evaluation Form</h1>
+  </div>
+</section>
+
+<section class="form-section">
+  <div class="container">
+    <p class="form-intro">Complete all required fields (*) to submit your roof evaluation.</p>
+    
+    <form action="https://formsubmit.co/your-email@example.com" method="POST" class="job-form patriotic-form" enctype="multipart/form-data">
+      <!-- FormSubmit configuration -->
+      <input type="hidden" name="_captcha" value="true">
+      <input type="hidden" name="_subject" value="New Roof Evaluation Form Submission">
+      <input type="hidden" name="_next" value="{{ '/epoxy-job-sheets/thank-you' | absolute_url }}">
+      
+      <!-- Basic Information Section -->
+      <div class="form-section-header patriotic-header">
+        <h2>Basic Information</h2>
+      </div>
+      
+      <div class="form-group">
+        <label class="required" for="consultant-name">Consultant Name</label>
+        <input type="text" id="consultant-name" name="consultant-name" required>
+      </div>
+      
+      <div class="form-group">
+        <label class="required" for="client-name">Client Name</label>
+        <input type="text" id="client-name" name="client-name" required>
+      </div>
+      
+      <div class="form-group">
+        <label class="required" for="roof-age">Approximate Age of Roof</label>
+        <input type="text" id="roof-age" name="roof-age" required>
+      </div>
+      
+      <div class="form-group">
+        <label class="required" for="roof-layers">How Many Layers?</label>
+        <input type="number" id="roof-layers" name="roof-layers" min="1" required>
+      </div>
+      
+      <!-- Exterior Inspection Section -->
+      <div class="form-section-header patriotic-header">
+        <h2>Exterior Inspection</h2>
+      </div>
+      
+      <div class="form-group">
+        <label class="required" for="roof-material">Current Roof Material</label>
+        <select id="roof-material" name="roof-material" required>
+          <option value="">Select Material</option>
+          <option value="Asphalt Shingles">Asphalt Shingles</option>
+          <option value="Metal">Metal</option>
+          <option value="Tile">Tile</option>
+          <option value="Slate">Slate</option>
+          <option value="Wood Shake">Wood Shake</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      
+      <!-- Visible Damage -->
+      <div class="form-group-radio">
+        <label class="required">Visible Damage</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="visible-damage" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="visible-damage" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <!-- Missing Shingles -->
+      <div class="form-group-radio">
+        <label class="required">Missing Shingles</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="missing-shingles" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="missing-shingles" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <!-- Curling/Buckled Shingles -->
+      <div class="form-group-radio">
+        <label class="required">Curling/Buckled Shingles</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="curling-shingles" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="curling-shingles" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <!-- Shingle Grit in Gutters -->
+      <div class="form-group-radio">
+        <label class="required">Shingle Grit in Gutters</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="grit-gutters" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="grit-gutters" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <!-- Nail Pops -->
+      <div class="form-group-radio">
+        <label class="required">Nail Pops</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="nail-pops" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="nail-pops" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <!-- Shingle Staining -->
+      <div class="form-group-radio">
+        <label class="required">Shingle Staining</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="shingle-staining" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="shingle-staining" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <!-- Moss Growth -->
+      <div class="form-group-radio">
+        <label class="required">Moss Growth</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="moss-growth" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="moss-growth" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <!-- Roof Currently Leaking -->
+      <div class="form-group-radio">
+        <label class="required">Roof Currently Leaking</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="roof-leaking" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="roof-leaking" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="leak-location">If Yes Where? (Take Pictures)</label>
+        <input type="text" id="leak-location" name="leak-location">
+      </div>
+      
+      <!-- Interior Inspections Section -->
+      <div class="form-section-header patriotic-header">
+        <h2>Interior Inspections</h2>
+      </div>
+      
+      <!-- Visible Home Interior Water Damage -->
+      <div class="form-group-radio">
+        <label class="required">Visible Home Interior Water Damage</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="interior-water-damage" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="interior-water-damage" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="water-damage-location">If Yes Where? (Take Pictures)</label>
+        <input type="text" id="water-damage-location" name="water-damage-location">
+      </div>
+      
+      <!-- Ceiling Stained -->
+      <div class="form-group-radio">
+        <label class="required">Ceiling Stained?</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="ceiling-stained" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="ceiling-stained" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="ceiling-stain-location">If Yes Where? (Take Pictures)</label>
+        <input type="text" id="ceiling-stain-location" name="ceiling-stain-location">
+      </div>
+      
+      <!-- Ceiling Bubbling/Buckling -->
+      <div class="form-group-radio">
+        <label class="required">Ceiling Bubbling/Buckling?</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="ceiling-bubbling" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="ceiling-bubbling" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="ceiling-bubbling-location">If Yes Where? (Take Pictures)</label>
+        <input type="text" id="ceiling-bubbling-location" name="ceiling-bubbling-location">
+      </div>
+      
+      <!-- Attic Inspection Section -->
+      <div class="form-section-header patriotic-header">
+        <h2>Attic Inspection</h2>
+      </div>
+      
+      <!-- Visible Rotted Wood -->
+      <div class="form-group-radio">
+        <label class="required">Any Visible Rotted Wood?</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="rotted-wood" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="rotted-wood" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="rotted-wood-location">If Yes Where? (Take Pictures)</label>
+        <input type="text" id="rotted-wood-location" name="rotted-wood-location">
+      </div>
+      
+      <!-- Rafters Cracked, Split, Broke -->
+      <div class="form-group-radio">
+        <label class="required">Any Rafters Cracked, Split, Broke?</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="damaged-rafters" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="damaged-rafters" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="damaged-rafters-location">If Yes Where? (Take Pictures)</label>
+        <input type="text" id="damaged-rafters-location" name="damaged-rafters-location">
+      </div>
+      
+      <!-- Proper Ventilation -->
+      <div class="form-group-radio">
+        <label class="required">Proper Ventilation?</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="proper-ventilation" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="proper-ventilation" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label class="required" for="insulation-depth">Insulation Depth in Inches? (Take Pictures)</label>
+        <input type="number" id="insulation-depth" name="insulation-depth" min="0" step="0.5" required>
+      </div>
+      
+      <!-- Photos Section -->
+      <div class="form-section-header patriotic-header">
+        <h2>Evaluation Photos</h2>
+      </div>
+      
+      <div class="form-group full-width">
+        <label class="required" for="exterior-photos">Exterior Roof Photos</label>
+        <p class="form-help-text">Upload multiple photos showing the roof exterior</p>
+        <input type="file" id="exterior-photos" name="exterior-photos" multiple accept="image/*" required>
+      </div>
+      
+      <div class="form-group full-width">
+        <label class="required" for="damage-photos">Damage Photos (if applicable)</label>
+        <p class="form-help-text">Upload photos showing specific damage issues</p>
+        <input type="file" id="damage-photos" name="damage-photos" multiple accept="image/*">
+      </div>
+      
+      <div class="form-group full-width">
+        <label for="attic-photos">Attic Photos</label>
+        <p class="form-help-text">Upload photos of the attic inspection</p>
+        <input type="file" id="attic-photos" name="attic-photos" multiple accept="image/*">
+      </div>
+      
+      <!-- Additional Notes Section -->
+      <div class="form-group full-width">
+        <label for="additional-notes">Additional Notes</label>
+        <textarea id="additional-notes" name="additional-notes" rows="4" placeholder="Any additional information about the roof evaluation"></textarea>
+      </div>
+      
+      <div class="form-group full-width">
+        <button type="submit" class="btn btn-patriotic">Submit Evaluation</button>
+      </div>
+    </form>
+  </div>
+</section>
+
