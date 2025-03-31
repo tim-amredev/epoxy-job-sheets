@@ -19,6 +19,10 @@ patriotic_page: true
       <input type="hidden" name="_captcha" value="true">
       <input type="hidden" name="_subject" value="New Roof Evaluation Form Submission">
       <input type="hidden" name="_next" value="{{ '/epoxy-job-sheets/thank-you' | absolute_url }}">
+      <!-- Honeypot field to prevent spam -->
+      <input type="text" name="_honey" style="display:none">
+      <!-- Disable FormSubmit's default captcha page -->
+      <input type="hidden" name="_template" value="table">
       
       <!-- Basic Information Section -->
       <div class="form-section-header patriotic-header">
@@ -324,21 +328,27 @@ patriotic_page: true
       </div>
       
       <div class="form-group full-width">
-        <label class="required" for="exterior-photos">Exterior Roof Photos</label>
-        <p class="form-help-text">Upload multiple photos showing the roof exterior</p>
-        <input type="file" id="exterior-photos" name="exterior-photos" multiple accept="image/*" required>
+        <label for="exterior-photos">Exterior Roof Photos</label>
+        <p class="form-help-text">Upload photos showing the roof exterior (max 10MB total)</p>
+        <input type="file" id="exterior-photos" name="exterior-photos" accept="image/*">
+        <p class="form-help-text">For multiple photos, please upload to a service like Google Drive and share the link below</p>
+        <input type="text" id="exterior-photos-link" name="exterior-photos-link" placeholder="Paste your photo link here">
       </div>
       
       <div class="form-group full-width">
-        <label class="required" for="damage-photos">Damage Photos (if applicable)</label>
-        <p class="form-help-text">Upload photos showing specific damage issues</p>
-        <input type="file" id="damage-photos" name="damage-photos" multiple accept="image/*">
+        <label for="damage-photos">Damage Photos (if applicable)</label>
+        <p class="form-help-text">Upload photos showing specific damage issues (max 10MB total)</p>
+        <input type="file" id="damage-photos" name="damage-photos" accept="image/*">
+        <p class="form-help-text">For multiple photos, please upload to a service like Google Drive and share the link below</p>
+        <input type="text" id="damage-photos-link" name="damage-photos-link" placeholder="Paste your photo link here">
       </div>
       
       <div class="form-group full-width">
         <label for="attic-photos">Attic Photos</label>
-        <p class="form-help-text">Upload photos of the attic inspection</p>
-        <input type="file" id="attic-photos" name="attic-photos" multiple accept="image/*">
+        <p class="form-help-text">Upload photos of the attic inspection (max 10MB total)</p>
+        <input type="file" id="attic-photos" name="attic-photos" accept="image/*">
+        <p class="form-help-text">For multiple photos, please upload to a service like Google Drive and share the link below</p>
+        <input type="text" id="attic-photos-link" name="attic-photos-link" placeholder="Paste your photo link here">
       </div>
       
       <!-- Additional Notes Section -->
@@ -353,4 +363,3 @@ patriotic_page: true
     </form>
   </div>
 </section>
-
