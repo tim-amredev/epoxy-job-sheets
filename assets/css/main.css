@@ -1,15 +1,21 @@
 /* Base Styles */
 :root {
-  --primary-color: #ff0000; /* Changed to red to match logo */
+  --primary-color: #ff0000; /* Red from logo */
   --secondary-color: #cc0000; /* Darker red */
-  --accent-color: #000000; /* Black from logo */
-  --text-color: #333;
-  --light-text: #fff;
-  --light-bg: #f8f9fa;
-  --dark-bg: #000000; /* Changed to black to match logo */
-  --border-color: #dee2e6;
-  --success-color: #28a745;
-  --error-color: #dc3545;
+  --accent-color: #ff3333; /* Lighter red */
+  --text-color: #e0e0e0; /* Light text for dark backgrounds */
+  --text-muted: #a0a0a0; /* Muted text color */
+  --light-text: #ffffff; /* White text */
+  --dark-bg: #121212; /* Very dark background */
+  --card-bg: #1e1e1e; /* Slightly lighter than main background */
+  --header-bg: #0a0a0a; /* Very dark header */
+  --border-color: #333333; /* Dark borders */
+  --input-bg: #2a2a2a; /* Dark input background */
+  --input-border: #444444; /* Input border color */
+  --success-color: #4caf50; /* Green */
+  --error-color: #f44336; /* Red */
+  --section-bg: #1a1a1a; /* Section background */
+  --hover-bg: #333333; /* Hover background */
 }
 
 * {
@@ -22,7 +28,7 @@ body {
   font-family: "Arial", sans-serif;
   line-height: 1.6;
   color: var(--text-color);
-  background-color: #fff;
+  background-color: var(--dark-bg);
 }
 
 .container {
@@ -33,13 +39,13 @@ body {
 }
 
 a {
-  color: var(--primary-color);
+  color: var(--accent-color);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 img {
@@ -56,6 +62,7 @@ h5,
 h6 {
   margin-bottom: 1rem;
   line-height: 1.2;
+  color: var(--light-text);
 }
 
 h1 {
@@ -97,19 +104,20 @@ p {
 }
 
 .btn-secondary {
-  background-color: var(--accent-color);
+  background-color: var(--card-bg);
   color: var(--light-text);
+  border: 1px solid var(--border-color);
 }
 
 .btn-secondary:hover {
-  background-color: #138496;
+  background-color: var(--hover-bg);
   color: var(--light-text);
 }
 
 /* Header */
 .site-header {
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: var(--header-bg);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   padding: 0.75rem 0;
   position: sticky;
   top: 0;
@@ -123,8 +131,8 @@ p {
 }
 
 .logo img {
-  max-height: 80px; /* Increased height for better visibility */
-  background-color: transparent; /* Ensure transparent background */
+  max-height: 80px;
+  background-color: transparent;
 }
 
 .main-nav {
@@ -143,6 +151,11 @@ p {
 
 .nav-links a {
   font-weight: 600;
+  color: var(--light-text);
+}
+
+.nav-links a:hover {
+  color: var(--accent-color);
 }
 
 .menu-toggle {
@@ -157,13 +170,13 @@ p {
   width: 25px;
   height: 3px;
   margin: 5px auto;
-  background-color: var(--text-color);
+  background-color: var(--light-text);
   transition: all 0.3s ease;
 }
 
 /* Hero Section */
 .hero {
-  background-color: var(--dark-bg);
+  background-color: var(--header-bg);
   color: var(--light-text);
   padding: 5rem 0;
   text-align: center;
@@ -177,12 +190,13 @@ p {
 .hero p {
   font-size: 1.25rem;
   margin-bottom: 2rem;
+  color: var(--text-muted);
 }
 
 /* Services Section */
 .services {
   padding: 5rem 0;
-  background-color: var(--light-bg);
+  background-color: var(--dark-bg);
 }
 
 .services h2 {
@@ -197,11 +211,11 @@ p {
 }
 
 .service-card {
-  background-color: #fff;
+  background-color: var(--card-bg);
   border-radius: 8px;
   padding: 2rem;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
 }
 
@@ -217,7 +231,7 @@ p {
 
 /* CTA Section */
 .cta {
-  background-color: var(--dark-bg);
+  background-color: var(--header-bg);
   color: var(--light-text);
   padding: 4rem 0;
   text-align: center;
@@ -230,12 +244,13 @@ p {
 .cta p {
   margin-bottom: 2rem;
   font-size: 1.1rem;
+  color: var(--text-muted);
 }
 
 /* Footer */
 .site-footer {
-  background-color: var(--dark-bg);
-  color: var(--light-text);
+  background-color: var(--header-bg);
+  color: var(--text-color);
   padding: 3rem 0 1rem;
 }
 
@@ -286,7 +301,7 @@ p {
 
 /* Page Header */
 .page-header {
-  background-color: var(--dark-bg);
+  background-color: var(--header-bg);
   color: var(--light-text);
   padding: 3rem 0;
   text-align: center;
@@ -301,19 +316,24 @@ p {
   text-align: center;
   max-width: 800px;
   margin: 0 auto 2rem;
+  color: var(--text-muted);
 }
 
 .job-form,
 .contact-form form {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .form-group {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .form-group.full-width {
@@ -324,6 +344,18 @@ label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
+  color: var(--light-text);
+}
+
+/* Remove the default asterisk styling */
+label::after {
+  content: "";
+}
+
+/* Add red asterisk only to required fields */
+label.required::after {
+  content: " *";
+  color: var(--primary-color);
 }
 
 input,
@@ -331,10 +363,21 @@ select,
 textarea {
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--input-border);
   border-radius: 4px;
   font-family: inherit;
   font-size: 1rem;
+  background-color: var(--input-bg);
+  color: var(--light-text);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.2);
 }
 
 textarea {
@@ -344,9 +387,10 @@ textarea {
 /* Form Section Headers */
 .form-section-header {
   margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   border-bottom: 2px solid var(--primary-color);
   padding-bottom: 0.5rem;
+  grid-column: span 2;
 }
 
 .form-section-header h2 {
@@ -355,11 +399,16 @@ textarea {
   margin-bottom: 0;
 }
 
+/* First section header doesn't need top margin */
+.form-section-header:first-of-type {
+  margin-top: 0;
+}
+
 /* Form Help Text */
 .form-help-text {
   font-size: 0.875rem;
-  color: #666;
-  margin-top: -0.5rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
   margin-bottom: 0.5rem;
 }
 
@@ -367,41 +416,22 @@ textarea {
 input[type="file"] {
   padding: 0.5rem 0;
   border: none;
+  background-color: transparent;
 }
 
 input[type="file"]::file-selector-button {
   padding: 0.5rem 1rem;
   border-radius: 4px;
-  background-color: #f1f1f1;
-  border: 1px solid #ddd;
+  background-color: var(--card-bg);
+  border: 1px solid var(--input-border);
+  color: var(--light-text);
   cursor: pointer;
   margin-right: 1rem;
   transition: background-color 0.3s;
 }
 
 input[type="file"]::file-selector-button:hover {
-  background-color: #e1e1e1;
-}
-
-/* Required Field Indicator */
-label[for]:after {
-  content: "";
-}
-
-label[for*="job-name"]:after,
-label[for*="job-date"]:after,
-label[for*="crew-names"]:after,
-label[for*="total-hours"]:after,
-label[for*="total-sq-ft"]:after,
-label[for*="vertical-sq-ft"]:after,
-label[for*="product-type"]:after,
-label[for*="first-color"]:after,
-label[for*="product-amount"]:after,
-label[for*="before-pictures"]:after,
-label[for*="progress-pictures"]:after,
-label[for*="completion-pictures"]:after {
-  content: " *";
-  color: var(--primary-color);
+  background-color: var(--hover-bg);
 }
 
 /* Form Validation Styling */
@@ -420,6 +450,10 @@ textarea:invalid {
   max-width: 600px;
   margin: 0 auto;
   text-align: center;
+  background-color: var(--card-bg);
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .thank-you-content i {
@@ -434,6 +468,7 @@ textarea:invalid {
 
 .thank-you-content p {
   margin-bottom: 2rem;
+  color: var(--text-muted);
 }
 
 /* Thank You Page Styles */
@@ -527,11 +562,11 @@ textarea:invalid {
     top: 80px;
     left: 0;
     width: 100%;
-    background-color: #fff;
+    background-color: var(--header-bg);
     flex-direction: column;
     align-items: center;
     padding: 2rem 0;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
     transform: translateY(-150%);
     transition: transform 0.3s ease;
   }
@@ -547,6 +582,7 @@ textarea:invalid {
   .job-form,
   .contact-form form {
     grid-template-columns: 1fr;
+    padding: 1.5rem;
   }
 
   .form-group.full-width {
@@ -567,21 +603,6 @@ textarea:invalid {
 
   .hero h1 {
     font-size: 2.5rem;
-  }
-}
-
-/* Responsive Form Adjustments */
-@media (max-width: 768px) {
-  .job-form {
-    grid-template-columns: 1fr;
-  }
-
-  .form-group.full-width {
-    grid-column: 1;
-  }
-
-  input[type="file"] {
-    width: 100%;
   }
 }
 
