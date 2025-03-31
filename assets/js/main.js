@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
   // Conditional fields in concrete evaluation form
-  const conditionalFields = {
+  const concreteConditionalFields = {
     pitting: "pitting-sq-ft",
     "hollow-spots": "hollow-spots-sq-ft",
     "chipping-flaking": "chipping-flaking-sq-ft",
@@ -69,10 +69,23 @@ document.addEventListener("DOMContentLoaded", () => {
     "existing-coatings": "coating-type",
   }
 
+  // Conditional fields in roof evaluation form
+  const roofConditionalFields = {
+    "roof-leaking": "leak-location",
+    "interior-water-damage": "water-damage-location",
+    "ceiling-stained": "ceiling-stain-location",
+    "ceiling-bubbling": "ceiling-bubbling-location",
+    "rotted-wood": "rotted-wood-location",
+    "damaged-rafters": "damaged-rafters-location",
+  }
+
+  // Combine all conditional fields
+  const allConditionalFields = { ...concreteConditionalFields, ...roofConditionalFields }
+
   // Set up event listeners for radio buttons
-  Object.keys(conditionalFields).forEach((radioName) => {
+  Object.keys(allConditionalFields).forEach((radioName) => {
     const radioButtons = document.querySelectorAll(`input[name="${radioName}"]`)
-    const conditionalFieldId = conditionalFields[radioName]
+    const conditionalFieldId = allConditionalFields[radioName]
 
     radioButtons.forEach((radio) => {
       radio.addEventListener("change", function () {
@@ -94,13 +107,13 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
   // Initialize conditional fields on page load
-  Object.keys(conditionalFields).forEach((radioName) => {
+  Object.keys(allConditionalFields).forEach((radioName) => {
     const radioChecked = document.querySelector(`input[name="${radioName}"]:checked`)
     if (radioChecked) {
       const event = new Event("change")
       radioChecked.dispatchEvent(event)
     } else {
-      const conditionalFieldId = conditionalFields[radioName]
+      const conditionalFieldId = allConditionalFields[radioName]
       const conditionalField = document.getElementById(conditionalFieldId)
       if (conditionalField) {
         const conditionalFieldContainer = conditionalField.closest(".form-group")
