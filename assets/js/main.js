@@ -58,5 +58,59 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
   })
+
+  // Conditional fields in concrete evaluation form
+  const conditionalFields = {
+    pitting: "pitting-sq-ft",
+    "hollow-spots": "hollow-spots-sq-ft",
+    "chipping-flaking": "chipping-flaking-sq-ft",
+    cracks: "cracks-linear-ft",
+    "heaving-settling": "heaving-settling-inches",
+    "existing-coatings": "coating-type",
+  }
+
+  // Set up event listeners for radio buttons
+  Object.keys(conditionalFields).forEach((radioName) => {
+    const radioButtons = document.querySelectorAll(`input[name="${radioName}"]`)
+    const conditionalFieldId = conditionalFields[radioName]
+
+    radioButtons.forEach((radio) => {
+      radio.addEventListener("change", function () {
+        const conditionalField = document.getElementById(conditionalFieldId)
+        if (!conditionalField) return
+
+        const conditionalFieldContainer = conditionalField.closest(".form-group")
+        if (!conditionalFieldContainer) return
+
+        if (this.value === "Yes") {
+          conditionalFieldContainer.style.display = "block"
+          if (radioName === "existing-coatings") {
+            conditionalField.focus()
+          }
+        } else {
+          conditionalFieldContainer.style.display = "none"
+          conditionalField.value = ""
+        }
+      })
+    })
+  })
+
+  // Initialize conditional fields on page load
+  Object.keys(conditionalFields).forEach((radioName) => {
+    const radioChecked = document.querySelector(`input[name="${radioName}"]:checked`)
+    if (radioChecked) {
+      const event = new Event("change")
+      radioChecked.dispatchEvent(event)
+    } else {
+      const conditionalFieldId = conditionalFields[radioName]
+      const conditionalField = document.getElementById(conditionalFieldId)
+      if (conditionalField) {
+        const conditionalFieldContainer = conditionalField.closest(".form-group")
+        if (conditionalFieldContainer) {
+          conditionalFieldContainer.style.display = "none"
+        }
+      }
+    }
+  })
 })
 
