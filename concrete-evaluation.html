@@ -17,11 +17,9 @@ title: Concrete Evaluation Form
       <!-- FormSubmit configuration -->
       <input type="hidden" name="_captcha" value="true">
       <input type="hidden" name="_subject" value="New Concrete Evaluation Form Submission">
-      <input type="hidden" name="_next" value="{{ '/epoxy-job-sheets/thank-you' | absolute_url }}">
+      <input type="hidden" name="_next" value="https://tim-amredev.github.io/epoxy-job-sheets/thank-you">
       <!-- Honeypot field to prevent spam -->
       <input type="text" name="_honey" style="display:none">
-      <!-- Disable FormSubmit's default captcha page -->
-      <input type="hidden" name="_template" value="table">
       
       <!-- Basic Information Section -->
       <div class="form-section-header">
@@ -207,18 +205,14 @@ title: Concrete Evaluation Form
       </div>
       
       <div class="form-group full-width">
-        <label for="overview-photos">Overview Photos</label>
-        <p class="form-help-text">Upload photos showing the overall concrete area (max 10MB total)</p>
-        <input type="file" id="overview-photos" name="overview-photos" accept="image/*">
-        <p class="form-help-text">For multiple photos, please upload to a service like Google Drive and share the link below</p>
+        <label for="overview-photos-link">Overview Photos</label>
+        <p class="form-help-text">Upload photos to a service like Google Drive and share the link below</p>
         <input type="text" id="overview-photos-link" name="overview-photos-link" placeholder="Paste your photo link here">
       </div>
       
       <div class="form-group full-width">
-        <label for="damage-photos">Damage/Issue Photos</label>
-        <p class="form-help-text">Upload photos showing specific damage or issues (max 10MB total)</p>
-        <input type="file" id="damage-photos" name="damage-photos" accept="image/*">
-        <p class="form-help-text">For multiple photos, please upload to a service like Google Drive and share the link below</p>
+        <label for="damage-photos-link">Damage/Issue Photos</label>
+        <p class="form-help-text">Upload photos to a service like Google Drive and share the link below</p>
         <input type="text" id="damage-photos-link" name="damage-photos-link" placeholder="Paste your photo link here">
       </div>
       
@@ -234,4 +228,3 @@ title: Concrete Evaluation Form
     </form>
   </div>
 </section>
-
