@@ -954,46 +954,288 @@ textarea:invalid {
 }
 
 /* Full Patriotic Theme Styling */
+/* Update the patriotic theme to fully override dark theme elements */
+
+/* Ensure patriotic theme properly overrides all dark theme elements */
 .patriotic-theme {
   background-color: var(--patriotic-bg);
   color: var(--patriotic-text);
 }
 
-.patriotic-theme .site-header {
-  background: linear-gradient(135deg, var(--patriotic-blue) 0%, var(--patriotic-red) 100%);
-  box-shadow: 0 4px 15px var(--patriotic-shadow);
-}
-
-.patriotic-theme .site-footer {
-  background: linear-gradient(135deg, var(--patriotic-blue) 0%, var(--patriotic-red) 100%);
-  color: var(--patriotic-white);
-}
-
-.patriotic-theme .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.patriotic-main {
+.patriotic-theme .page-header,
+.patriotic-theme .form-section-header:not(.patriotic-header) {
   background-color: var(--patriotic-bg);
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233c3b6e' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  color: var(--patriotic-text);
 }
 
-/* Enhanced Patriotic Header */
-.patriotic-header {
+.patriotic-theme h1,
+.patriotic-theme h2,
+.patriotic-theme h3,
+.patriotic-theme h4,
+.patriotic-theme h5,
+.patriotic-theme h6,
+.patriotic-theme label,
+.patriotic-theme p {
+  color: var(--patriotic-text);
+}
+
+.patriotic-theme .form-intro {
+  color: var(--patriotic-text);
+}
+
+/* Fix mobile layout issues */
+.patriotic-form {
+  background-color: var(--patriotic-white);
+  color: var(--patriotic-text);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px var(--patriotic-shadow);
+  padding: 1.5rem;
+  position: relative;
+  overflow: visible; /* Changed from hidden to prevent cutoff */
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ensure form groups don't overflow */
+.patriotic-form .form-group,
+.patriotic-form .form-group-radio {
+  margin-bottom: 1.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: var(--patriotic-field-bg);
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Fix input field styling for patriotic theme */
+.patriotic-form input[type="text"],
+.patriotic-form input[type="number"],
+.patriotic-form input[type="email"],
+.patriotic-form input[type="tel"],
+.patriotic-form input[type="date"],
+.patriotic-form select,
+.patriotic-form textarea {
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  background-color: var(--patriotic-white);
+  color: var(--patriotic-text);
+  padding: 0.75rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Fix radio button layout for mobile */
+.patriotic-form .radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.patriotic-form .radio-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: normal;
+  margin-bottom: 0;
+  position: relative;
+  padding-left: 35px;
+  font-size: 1rem;
+  width: 100%;
+  min-height: 30px;
+}
+
+/* Fix file upload styling for mobile */
+.patriotic-form input[type="file"] {
+  padding: 0.5rem 0;
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Fix form section headers for patriotic theme */
+.form-section-header.patriotic-header {
+  background: linear-gradient(90deg, var(--patriotic-red) 0%, var(--patriotic-blue) 100%);
+  border-bottom: none;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transform: translateZ(0);
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ensure consistent spacing in form */
+.patriotic-form .form-group.full-width:last-child {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed rgba(60, 59, 110, 0.2);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Improve mobile responsiveness */
+@media (max-width: 576px) {
+  .patriotic-form {
+    padding: 1rem;
+  }
+
+  .patriotic-form .form-group,
+  .patriotic-form .form-group-radio {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .patriotic-form input[type="text"],
+  .patriotic-form input[type="number"],
+  .patriotic-form input[type="email"],
+  .patriotic-form input[type="tel"],
+  .patriotic-form input[type="date"],
+  .patriotic-form select,
+  .patriotic-form textarea {
+    padding: 0.6rem;
+  }
+
+  .form-section-header.patriotic-header {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .patriotic-form .form-group.full-width:last-child {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+  }
+}
+
+/* Fix floating stars to prevent overflow */
+.floating-star {
+  position: absolute;
+  color: white;
+  animation: float 5s ease-in-out infinite;
+  z-index: 1;
+  pointer-events: none;
+  font-size: 14px;
+  max-width: 20px;
+  max-height: 20px
+  overflow: hidden;
+}
+
+/* Fix button styling for patriotic theme */
+.btn-patriotic {
   background: linear-gradient(135deg, var(--patriotic-red) 0%, var(--patriotic-blue) 100%);
+  color: var(--patriotic-white);
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   position: relative;
   overflow: hidden;
-  border-radius: 0 0 15% 15% / 10%;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  display: block;
 }
 
-.patriotic-header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23ffffff' fill-opacity='0.15' d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 
- 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-
+/* Add these styles to ensure consistent form field styling */
+
+/* Patriotic field styling */
+.patriotic-field {
+  background-color: var(--patriotic-field-bg);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.patriotic-field:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Ensure text colors are consistent */
+.patriotic-text {
+  color: var(--patriotic-text) !important;
+}
+
+.patriotic-theme .form-help-text {
+  color: var(--patriotic-light-blue);
+}
+
+/* Fix form layout for mobile */
+@media (max-width: 576px) {
+  .patriotic-form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .patriotic-form .form-group,
+  .patriotic-form .form-group-radio,
+  .patriotic-field {
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .form-section-header.patriotic-header {
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* Ensure all form elements in patriotic theme have proper colors */
+.patriotic-theme input[type="text"],
+.patriotic-theme input[type="number"],
+.patriotic-theme input[type="email"],
+.patriotic-theme input[type="tel"],
+.patriotic-theme input[type="date"],
+.patriotic-theme select,
+.patriotic-theme textarea {
+  background-color: var(--patriotic-white);
+  color: var(--patriotic-text);
+  border-color: #d1d5db;
+}
+
+/* Fix radio button styling */
+.patriotic-theme .radio-label {
+  color: var(--patriotic-text);
+}
+
+/* Fix file upload button styling */
+.patriotic-theme input[type="file"]::file-selector-button {
+  background-color: var(--patriotic-blue);
+  color: var(--patriotic-white);
+  border: none;
+}
+
+/* Fix conditional field display */
+.patriotic-theme .form-group[style*="display: none"] {
+  display: none !important;
+}
 
