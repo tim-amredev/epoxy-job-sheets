@@ -1,0 +1,210 @@
+---
+layout: default
+title: Window Evaluation Form
+patriotic_page: true
+---
+
+<section class="page-header patriotic-header">
+  <div class="container">
+    <h1>Window Evaluation Form</h1>
+  </div>
+</section>
+
+<section class="form-section patriotic-section">
+  <div class="container">
+    <p class="form-intro patriotic-text">Complete all required fields (*) to submit your window evaluation.</p>
+    
+    <form action="https://formsubmit.co/your-email@example.com" method="POST" class="job-form patriotic-form" enctype="multipart/form-data">
+      <!-- FormSubmit configuration -->
+      <input type="hidden" name="_captcha" value="true">
+      <input type="hidden" name="_subject" value="New Window Evaluation Form Submission">
+      <input type="hidden" name="_next" value="{{ '/epoxy-job-sheets/thank-you' | absolute_url }}">
+      
+      <!-- Basic Information Section -->
+      <div class="form-section-header patriotic-header">
+        <h2>Basic Information</h2>
+      </div>
+      
+      <div class="form-group patriotic-field">
+        <label class="required" for="consultant-name">Consultant Name</label>
+        <input type="text" id="consultant-name" name="consultant-name" required>
+      </div>
+      
+      <div class="form-group patriotic-field">
+        <label class="required" for="client-name">Client Name</label>
+        <input type="text" id="client-name" name="client-name" required>
+      </div>
+      
+      <!-- Window Details Section -->
+      <div class="form-section-header patriotic-header">
+        <h2>Window Details</h2>
+      </div>
+      
+      <div class="form-group patriotic-field">
+        <label class="required" for="window-amount">Amount of Windows</label>
+        <input type="number" id="window-amount" name="window-amount" min="1" required>
+      </div>
+      
+      <div class="form-group patriotic-field">
+        <label class="required" for="window-age">Approximate Age of Windows</label>
+        <input type="text" id="window-age" name="window-age" required>
+      </div>
+      
+      <div class="form-group patriotic-field">
+        <label class="required" for="window-material">Current Window Material</label>
+        <select id="window-material" name="window-material" required>
+          <option value="">Select Material</option>
+          <option value="Wood">Wood</option>
+          <option value="Vinyl">Vinyl</option>
+          <option value="Aluminum">Aluminum</option>
+          <option value="Fiberglass">Fiberglass</option>
+          <option value="Composite">Composite</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      
+      <!-- Condition Assessment Section -->
+      <div class="form-section-header patriotic-header">
+        <h2>Condition Assessment</h2>
+      </div>
+      
+      <!-- Windows Easy to Open -->
+      <div class="form-group-radio patriotic-field">
+        <label class="required">Are the Windows Easy to Open</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="easy-open" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="easy-open" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <!-- Windows Drafty -->
+      <div class="form-group-radio patriotic-field">
+        <label class="required">Are the Windows Drafty</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="drafty-windows" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="drafty-windows" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <!-- Sashes Loose -->
+      <div class="form-group-radio patriotic-field">
+        <label class="required">Are the Sashes Loose</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="loose-sashes" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="loose-sashes" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <!-- Window Paint Peeling -->
+      <div class="form-group-radio patriotic-field">
+        <label class="required">Window Paint Peeling</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="paint-peeling" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="paint-peeling" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <!-- Working Locks -->
+      <div class="form-group-radio patriotic-field">
+        <label class="required">Working Locks</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="working-locks" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="working-locks" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <!-- Broken Glass -->
+      <div class="form-group-radio patriotic-field">
+        <label class="required">Broken Glass</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="broken-glass" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="broken-glass" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <!-- Rotten Wood -->
+      <div class="form-group-radio patriotic-field">
+        <label class="required">Rotten Wood</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="rotten-wood" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="rotten-wood" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="rotten-wood-location">If Yes Where?</label>
+        <input type="text" id="rotten-wood-location" name="rotten-wood-location">
+      </div>
+      
+      <!-- Photos Section -->
+      <div class="form-section-header patriotic-header">
+        <h2>Evaluation Photos</h2>
+      </div>
+      
+      <div class="form-group full-width patriotic-field">
+        <label class="required" for="overview-photos">Overview Photos</label>
+        <p class="form-help-text">Upload multiple photos showing the windows from inside and outside</p>
+        <input type="file" id="overview-photos" name="overview-photos" multiple accept="image/*" required>
+      </div>
+      
+      <div class="form-group full-width patriotic-field">
+        <label class="required" for="damage-photos">Damage Photos (if applicable)</label>
+        <p class="form-help-text">Upload photos showing specific damage issues</p>
+        <input type="file" id="damage-photos" name="damage-photos" multiple accept="image/*">
+      </div>
+      
+      <!-- Additional Notes Section -->
+      <div class="form-group full-width patriotic-field">
+        <label for="additional-notes">Additional Notes</label>
+        <textarea id="additional-notes" name="additional-notes" rows="4" placeholder="Any additional information about the window evaluation"></textarea>
+      </div>
+      
+      <div class="form-group full-width">
+        <button type="submit" class="btn btn-patriotic">Submit Evaluation</button>
+      </div>
+    </form>
+  </div>
+</section>
+
