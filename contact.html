@@ -48,6 +48,10 @@ title: Contact Us
           <input type="hidden" name="_captcha" value="true">
           <input type="hidden" name="_subject" value="New Contact Form Submission">
           <input type="hidden" name="_next" value="{{ '/epoxy-job-sheets/thank-you' | absolute_url }}">
+          <!-- Honeypot field to prevent spam -->
+          <input type="text" name="_honey" style="display:none">
+          <!-- Disable FormSubmit's default captcha page -->
+          <input type="hidden" name="_template" value="table">
           
           <div class="form-group">
             <label for="contact-name">Name *</label>
