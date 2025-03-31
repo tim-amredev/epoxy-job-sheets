@@ -1,208 +1,201 @@
 ---
 layout: default
-title: Job Form
+title: Rubber & Stone Job Form
 ---
 
 <section class="page-header">
-  <div class="container">
-    <h1>Epoxy Floor Job Sheet</h1>
-  </div>
+<div class="container">
+  <h1>Rubber & Stone Job Sheet</h1>
+</div>
 </section>
 
 <section class="form-section">
-  <div class="container">
-    <p class="form-intro">Complete all required fields (*) to submit your job information.</p>
+<div class="container">
+  <p class="form-intro">Complete all required fields (*) to submit your rubber & stone job information.</p>
+  
+  <form action="https://formsubmit.co/tim@americanremodeling.net" method="POST" class="job-form" enctype="multipart/form-data">
+    <!-- FormSubmit configuration -->
+    <input type="hidden" name="_captcha" value="true">
+    <input type="hidden" name="_subject" value="New Rubber & Stone Job Sheet Submission">
+    <input type="hidden" name="_next" value="{{ '/epoxy-job-sheets/thank-you' | absolute_url }}">
+    <!-- Honeypot field to prevent spam -->
+    <input type="text" name="_honey" style="display:none">
+    <!-- Disable FormSubmit's default captcha page -->
+    <input type="hidden" name="_template" value="table">
     
-    <form action="https://formsubmit.co/tim@americanremodeling.net" method="POST" class="job-form" enctype="multipart/form-data">
-      <!-- FormSubmit configuration -->
-      <input type="hidden" name="_captcha" value="true">
-      <input type="hidden" name="_subject" value="New Epoxy Floor Job Sheet Submission">
-      <input type="hidden" name="_next" value="{{ '/epoxy-job-sheets/thank-you' | absolute_url }}">
-      <!-- Honeypot field to prevent spam -->
-      <input type="text" name="_honey" style="display:none">
-      <!-- Disable FormSubmit's default captcha page -->
-      <input type="hidden" name="_template" value="table">
-      
-      <!-- Job Information Section -->
-      <div class="form-section-header">
-        <h2>Job Information</h2>
+    <!-- Job Information Section -->
+    <div class="form-section-header">
+      <h2>Job Information</h2>
+    </div>
+    
+    <div class="form-group">
+      <label class="required" for="job-name">Job Name & Number</label>
+      <input type="text" id="job-name" name="job-name" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="reviews">Reviews Obtained</label>
+      <div class="checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" name="google-review" value="Yes">
+          Google Review
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" name="facebook-review" value="Yes">
+          Facebook Review
+        </label>
       </div>
-      
-      <div class="form-group">
-        <label class="required" for="job-name">Job Name & Number</label>
-        <input type="text" id="job-name" name="job-name" required>
-      </div>
-      
-      <div class="form-group">
-        <label class="required" for="job-date">Date</label>
-        <input type="date" id="job-date" name="job-date" required>
-      </div>
-      
-      <div class="form-group full-width">
-        <label class="required" for="crew-names">Crew Names</label>
-        <input type="text" id="crew-names" name="crew-names" placeholder="Enter all crew member names separated by commas" required>
-      </div>
-      
-      <!-- Job Measurements Section -->
-      <div class="form-section-header">
-        <h2>Job Measurements</h2>
-      </div>
-      
-      <div class="form-group">
-        <label class="required" for="total-hours">Total Hours Worked</label>
-        <input type="number" id="total-hours" name="total-hours" min="0" step="0.5" required>
-      </div>
-      
-      <div class="form-group">
-        <label class="required" for="total-sq-ft">Total Sq Ft</label>
-        <input type="number" id="total-sq-ft" name="total-sq-ft" min="0" required>
-      </div>
-      
-      <div class="form-group">
-        <label class="required" for="vertical-sq-ft">Total Vertical Sq Ft (0 If None)</label>
-        <input type="number" id="vertical-sq-ft" name="vertical-sq-ft" min="0" value="0" required>
-      </div>
-      
-      <div class="form-group">
-        <label for="linear-ft-cracks">Total Linear Ft Cracks Filled</label>
-        <input type="number" id="linear-ft-cracks" name="linear-ft-cracks" min="0" value="0">
-      </div>
-      
-      <div class="form-group">
-        <label for="sq-ft-high-impact">Total Sq Ft High Impact</label>
-        <input type="number" id="sq-ft-high-impact" name="sq-ft-high-impact" min="0" value="0">
-      </div>
-      
-      <!-- Product Information Section -->
-      <div class="form-section-header">
-        <h2>Product Information</h2>
-      </div>
-      
-      <div class="form-group">
-        <label class="required" for="product-type">Product Type</label>
-        <select id="product-type" name="product-type" required>
-          <option value="">Select Product Type</option>
-          <option value="Epoxy">Epoxy</option>
-          <option value="Polyaspartic">Polyaspartic</option>
-          <option value="Polyurethane">Polyurethane</option>
-          <option value="Hybrid System">Hybrid System</option>
-          <option value="Other">Other</option>
-        </select>
-      </div>
-      
-      <div class="form-group">
-        <label class="required" for="first-color">1st Color</label>
-        <input type="text" id="first-color" name="first-color" required>
-      </div>
-      
-      <div class="form-group">
-        <label for="second-color">2nd Color</label>
-        <input type="text" id="second-color" name="second-color">
-      </div>
-      
-      <div class="form-group">
-        <label for="third-color">3rd Color</label>
-        <input type="text" id="third-color" name="third-color">
-      </div>
-      
-      <div class="form-group">
-        <label class="required" for="product-amount">Amount of Product Used (Total)</label>
-        <input type="number" id="product-amount" name="product-amount" min="0" step="0.1" required>
-      </div>
-      
-      <!-- Product Quantities Section -->
-      <div class="form-section-header">
-        <h2>Product Quantities</h2>
-      </div>
-      
-      <div class="form-group">
-        <label for="diamond-blend">Diamond Blend (# Gallons)</label>
-        <input type="number" id="diamond-blend" name="diamond-blend" min="0" step="0.1" value="0">
-      </div>
-      
-      <div class="form-group">
-        <label for="hpp-2000">HPP 2000 (# Gallons)</label>
-        <input type="number" id="hpp-2000" name="hpp-2000" min="0" step="0.1" value="0">
-      </div>
-      
-      <div class="form-group">
-        <label for="novoxy-uw15">Novoxy UW-15 (# Gallons)</label>
-        <input type="number" id="novoxy-uw15" name="novoxy-uw15" min="0" step="0.1" value="0">
-      </div>
-      
-      <div class="form-group">
-        <label for="pigment">Pigment Color & Amount Used (# Quarts)</label>
-        <input type="text" id="pigment" name="pigment" placeholder="e.g., Red - 2 quarts">
-      </div>
-      
-      <div class="form-group">
-        <label for="turbo-patch">Turbo Patch Kit (# oz)</label>
-        <input type="number" id="turbo-patch" name="turbo-patch" min="0" value="0">
-      </div>
-      
-      <div class="form-group">
-        <label for="crack-eliminator">Crack Eliminator (# Tubes)</label>
-        <input type="number" id="crack-eliminator" name="crack-eliminator" min="0" value="0">
-      </div>
-      
-      <div class="form-group">
-        <label for="ultra-patch">Ultra Patch Kit (# oz)</label>
-        <input type="number" id="ultra-patch" name="ultra-patch" min="0" value="0">
-      </div>
-      
-      <div class="form-group">
-        <label for="horizontal-epoxy">Horizontal Epoxy (# Gallons)</label>
-        <input type="number" id="horizontal-epoxy" name="horizontal-epoxy" min="0" step="0.1" value="0">
-      </div>
-      
-      <div class="form-group">
-        <label for="acetone">Acetone (# Gallons)</label>
-        <input type="number" id="acetone" name="acetone" min="0" step="0.1" value="0">
-      </div>
-      
-      <div class="form-group full-width">
-        <label for="other-products">Other Products</label>
-        <textarea id="other-products" name="other-products" rows="3" placeholder="List any other products used and their quantities"></textarea>
-      </div>
-      
-      <!-- Job Photos Section -->
-      <div class="form-section-header">
-        <h2>Job Photos</h2>
-      </div>
-      
-      <div class="form-group full-width">
-        <label for="before-pictures">Before Job Pictures</label>
-        <p class="form-help-text">Upload multiple photos showing the condition before work began (max 10MB total)</p>
-        <input type="file" id="before-pictures" name="before-pictures" accept="image/*">
-        <p class="form-help-text">For multiple photos, please upload to a service like Google Drive and share the link below</p>
-        <input type="text" id="before-pictures-link" name="before-pictures-link" placeholder="Paste your photo link here">
-      </div>
-      
-      <div class="form-group full-width">
-        <label for="progress-pictures">Job Progress Pictures</label>
-        <p class="form-help-text">Upload photos showing the work in progress (max 10MB total)</p>
-        <input type="file" id="progress-pictures" name="progress-pictures" accept="image/*">
-        <p class="form-help-text">For multiple photos, please upload to a service like Google Drive and share the link below</p>
-        <input type="text" id="progress-pictures-link" name="progress-pictures-link" placeholder="Paste your photo link here">
-      </div>
-      
-      <div class="form-group full-width">
-        <label for="completion-pictures">Job Completion Pictures</label>
-        <p class="form-help-text">Upload photos showing the completed job (max 10MB total)</p>
-        <input type="file" id="completion-pictures" name="completion-pictures" accept="image/*">
-        <p class="form-help-text">For multiple photos, please upload to a service like Google Drive and share the link below</p>
-        <input type="text" id="completion-pictures-link" name="completion-pictures-link" placeholder="Paste your photo link here">
-      </div>
-      
-      <!-- Additional Notes Section -->
-      <div class="form-group full-width">
-        <label for="additional-notes">Additional Notes</label>
-        <textarea id="additional-notes" name="additional-notes" rows="4" placeholder="Any additional information about the job"></textarea>
-      </div>
-      
-      <div class="form-group full-width">
-        <button type="submit" class="btn btn-primary">Submit Job Sheet</button>
-      </div>
-    </form>
-  </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="required" for="job-date">Date (YYYY-MM-DD)</label>
+      <input type="date" id="job-date" name="job-date" required>
+    </div>
+    
+    <div class="form-group full-width">
+      <label class="required" for="crew-names">Crew Names</label>
+      <input type="text" id="crew-names" name="crew-names" placeholder="Enter all crew member names separated by commas" required>
+    </div>
+    
+    <!-- Job Measurements Section -->
+    <div class="form-section-header">
+      <h2>Job Measurements</h2>
+    </div>
+    
+    <div class="form-group">
+      <label class="required" for="total-hours">Total Hours Worked</label>
+      <input type="number" id="total-hours" name="total-hours" min="0" step="0.5" required>
+    </div>
+    
+    <div class="form-group">
+      <label class="required" for="total-sq-ft">Total Sq Ft</label>
+      <input type="number" id="total-sq-ft" name="total-sq-ft" min="0" required>
+    </div>
+    
+    <!-- Product Information Section -->
+    <div class="form-section-header">
+      <h2>Product Information</h2>
+    </div>
+    
+    <div class="form-group">
+      <label class="required" for="product-type">Product Type</label>
+      <select id="product-type" name="product-type" required>
+        <option value="">Select one option</option>
+        <option value="Rubber">Rubber</option>
+        <option value="Stone">Stone</option>
+        <option value="Rubber & Stone Mix">Rubber & Stone Mix</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label class="required" for="first-color">1st Color</label>
+      <input type="text" id="first-color" name="first-color" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="second-color">2nd Color</label>
+      <input type="text" id="second-color" name="second-color">
+    </div>
+    
+    <div class="form-group">
+      <label for="third-color">3rd Color</label>
+      <input type="text" id="third-color" name="third-color">
+    </div>
+    
+    <div class="form-group">
+      <label class="required" for="product-amount">Amount of Product Used (Total)</label>
+      <input type="number" id="product-amount" name="product-amount" min="0" step="0.1" required>
+    </div>
+    
+    <!-- Product Quantities Section -->
+    <div class="form-section-header">
+      <h2>Product Quantities</h2>
+    </div>
+    
+    <div class="form-group">
+      <label for="horizontal-epoxy">Horizontal Epoxy (# Gallons)</label>
+      <input type="number" id="horizontal-epoxy" name="horizontal-epoxy" min="0" step="0.1" value="0">
+    </div>
+    
+    <div class="form-group">
+      <label for="rock-rubber-non-yellow">Rock & Rubber Non Yellow (# Gallons)</label>
+      <input type="number" id="rock-rubber-non-yellow" name="rock-rubber-non-yellow" min="0" step="0.1" value="0">
+    </div>
+    
+    <div class="form-group">
+      <label for="standard-cure-non-yellow">Standard Cure Non Yellow (# Gallons)</label>
+      <input type="number" id="standard-cure-non-yellow" name="standard-cure-non-yellow" min="0" step="0.1" value="0">
+    </div>
+    
+    <div class="form-group">
+      <label for="pool-spa">Pool & Spa (# Gallons)</label>
+      <input type="number" id="pool-spa" name="pool-spa" min="0" step="0.1" value="0">
+    </div>
+    
+    <div class="form-group">
+      <label for="rock-rubber-yellow">Rock & Rubber Yellow (# Gallons)</label>
+      <input type="number" id="rock-rubber-yellow" name="rock-rubber-yellow" min="0" step="0.1" value="0">
+    </div>
+    
+    <div class="form-group">
+      <label for="standard-cure">Standard Cure (# Gallons)</label>
+      <input type="number" id="standard-cure" name="standard-cure" min="0" step="0.1" value="0">
+    </div>
+    
+    <div class="form-group">
+      <label for="vertical-primer">Vertical Primer (# oz)</label>
+      <input type="number" id="vertical-primer" name="vertical-primer" min="0" value="0">
+    </div>
+    
+    <div class="form-group">
+      <label for="acetone">Acetone (# Gallons)</label>
+      <input type="number" id="acetone" name="acetone" min="0" step="0.1" value="0">
+    </div>
+    
+    <div class="form-group full-width">
+      <label for="other-products">Other Products</label>
+      <textarea id="other-products" name="other-products" rows="3" placeholder="List any other products used and their quantities"></textarea>
+    </div>
+    
+    <!-- Job Photos Section -->
+    <div class="form-section-header">
+      <h2>Job Photos</h2>
+    </div>
+    
+    <div class="form-group full-width">
+      <label for="before-pictures">Before Job Pictures</label>
+      <p class="form-help-text">Upload photos showing the condition before work began (max 10MB total)</p>
+      <input type="file" id="before-pictures" name="before-pictures" accept="image/*">
+      <p class="form-help-text">For multiple photos, please upload to a service like Google Drive and share the link below</p>
+      <input type="text" id="before-pictures-link" name="before-pictures-link" placeholder="Paste your photo link here">
+    </div>
+    
+    <div class="form-group full-width">
+      <label for="progress-pictures">Job Progress Pictures</label>
+      <p class="form-help-text">Upload photos showing the work in progress (max 10MB total)</p>
+      <input type="file" id="progress-pictures" name="progress-pictures" accept="image/*">
+      <p class="form-help-text">For multiple photos, please upload to a service like Google Drive and share the link below</p>
+      <input type="text" id="progress-pictures-link" name="progress-pictures-link" placeholder="Paste your photo link here">
+    </div>
+    
+    <div class="form-group full-width">
+      <label for="completion-pictures">Job Completion Pictures</label>
+      <p class="form-help-text">Upload photos showing the completed job (max 10MB total)</p>
+      <input type="file" id="completion-pictures" name="completion-pictures" accept="image/*">
+      <p class="form-help-text">For multiple photos, please upload to a service like Google Drive and share the link below</p>
+      <input type="text" id="completion-pictures-link" name="completion-pictures-link" placeholder="Paste your photo link here">
+    </div>
+    
+    <!-- Additional Notes Section -->
+    <div class="form-group full-width">
+      <label for="additional-notes">Additional Notes</label>
+      <textarea id="additional-notes" name="additional-notes" rows="4" placeholder="Any additional information about the job"></textarea>
+    </div>
+    
+    <div class="form-group full-width">
+      <button type="submit" class="btn btn-primary">Submit Job Sheet</button>
+    </div>
+  </form>
+</div>
 </section>
