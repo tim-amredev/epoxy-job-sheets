@@ -16,6 +16,18 @@
   --error-color: #f44336; /* Red */
   --section-bg: #1a1a1a; /* Section background */
   --hover-bg: #333333; /* Hover background */
+
+  /* Patriotic Theme for Roof Evaluation */
+  /* Patriotic Colors */
+  --patriotic-red: #b22234; /* Old Glory Red */
+  --patriotic-white: #ffffff;
+  --patriotic-blue: #3c3b6e; /* Old Glory Blue */
+  --patriotic-light-blue: #5c5b8e;
+  --patriotic-light-red: #d24254;
+  --patriotic-bg: #f8f8ff; /* Almost white background */
+  --patriotic-text: #333333;
+  --patriotic-border: #b22234;
+  --patriotic-shadow: rgba(60, 59, 110, 0.2);
 }
 
 * {
@@ -766,5 +778,212 @@ textarea:invalid {
   .hero h1 {
     font-size: 2.5rem;
   }
+}
+
+/* Full Patriotic Theme Styling */
+.patriotic-theme {
+  background-color: var(--patriotic-bg);
+  color: var(--patriotic-text);
+}
+
+.patriotic-theme .site-header {
+  background-color: var(--patriotic-blue);
+  box-shadow: 0 2px 10px var(--patriotic-shadow);
+}
+
+.patriotic-theme .site-footer {
+  background-color: var(--patriotic-blue);
+  color: var(--patriotic-white);
+}
+
+.patriotic-theme .footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.patriotic-main {
+  background-color: var(--patriotic-bg);
+}
+
+/* Patriotic Header */
+.patriotic-header {
+  background: linear-gradient(135deg, var(--patriotic-red) 0%, var(--patriotic-blue) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.patriotic-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z'%3E%3C/path%3E%3C/svg%3E");
+  z-index: 0;
+}
+
+.patriotic-header .container {
+  position: relative;
+  z-index: 1;
+}
+
+.patriotic-header h1,
+.patriotic-header h2 {
+  color: var(--patriotic-white);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.page-header.patriotic-header {
+  padding: 4rem 0;
+}
+
+.form-section-header.patriotic-header {
+  background: linear-gradient(90deg, var(--patriotic-red) 0%, var(--patriotic-blue) 100%);
+  border-bottom: none;
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.form-section-header.patriotic-header h2 {
+  color: var(--patriotic-white);
+  margin-bottom: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Patriotic Form Section */
+.patriotic-section {
+  background-color: var(--patriotic-bg);
+  padding: 3rem 0;
+}
+
+.patriotic-section .form-intro {
+  color: var(--patriotic-text);
+  font-weight: 500;
+}
+
+/* Patriotic Form Styling */
+.patriotic-form {
+  background-color: var(--patriotic-white);
+  color: var(--patriotic-text);
+  border: 2px solid var(--patriotic-blue);
+  box-shadow: 0 10px 30px var(--patriotic-shadow);
+}
+
+.patriotic-form label {
+  color: var(--patriotic-blue);
+  font-weight: 600;
+}
+
+.patriotic-form label.required::after {
+  content: " *";
+  color: var(--patriotic-red);
+}
+
+.patriotic-form input[type="text"],
+.patriotic-form input[type="number"],
+.patriotic-form input[type="email"],
+.patriotic-form input[type="tel"],
+.patriotic-form input[type="date"],
+.patriotic-form select,
+.patriotic-form textarea {
+  border: 2px solid var(--patriotic-blue);
+  background-color: var(--patriotic-white);
+  color: var(--patriotic-text);
+}
+
+.patriotic-form input:focus,
+.patriotic-form select:focus,
+.patriotic-form textarea:focus {
+  border-color: var(--patriotic-red);
+  box-shadow: 0 0 0 2px rgba(178, 34, 52, 0.2);
+}
+
+.patriotic-form .radio-label input[type="radio"] {
+  accent-color: var(--patriotic-red);
+}
+
+.btn-patriotic {
+  background: linear-gradient(135deg, var(--patriotic-red) 0%, var(--patriotic-blue) 100%);
+  color: var(--patriotic-white);
+  border: none;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+}
+
+.btn-patriotic:hover {
+  background: linear-gradient(135deg, var(--patriotic-blue) 0%, var(--patriotic-red) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.patriotic-form input[type="file"]::file-selector-button {
+  background-color: var(--patriotic-blue);
+  border: 2px solid var(--patriotic-blue);
+  color: var(--patriotic-white);
+}
+
+.patriotic-form input[type="file"]::file-selector-button:hover {
+  background-color: var(--patriotic-red);
+  border-color: var(--patriotic-red);
+}
+
+/* Alternating rows for better readability */
+.patriotic-form .form-group-radio:nth-child(odd) {
+  background-color: rgba(60, 59, 110, 0.05);
+  padding: 0.75rem;
+  border-radius: 4px;
+}
+
+.patriotic-form .form-group:nth-child(odd) {
+  background-color: rgba(60, 59, 110, 0.05);
+  padding: 0.75rem;
+  border-radius: 4px;
+}
+
+/* Patriotic Form Help Text */
+.patriotic-form .form-help-text {
+  color: var(--patriotic-light-blue);
+}
+
+/* Patriotic Theme Navigation */
+.patriotic-theme .nav-links a {
+  color: var(--patriotic-white);
+}
+
+.patriotic-theme .nav-links a:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.patriotic-theme .dropdown-menu {
+  background-color: var(--patriotic-white);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.patriotic-theme .dropdown-menu a {
+  color: var(--patriotic-blue);
+}
+
+.patriotic-theme .dropdown-menu a:hover {
+  background-color: rgba(60, 59, 110, 0.1);
+  color: var(--patriotic-red);
+}
+
+/* Patriotic Stars and Stripes Decoration */
+.patriotic-form::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 60px;
+  height: 60px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='60' height='60'%3E%3Cpath fill='%23B22234' d='M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  z-index: 1;
 }
 
