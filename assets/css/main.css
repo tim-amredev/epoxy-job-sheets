@@ -433,13 +433,25 @@ p {
 
 /* Services Section */
 .services {
-  padding: 3rem 0;
+  padding: 4rem 0;
   background-color: var(--dark-bg);
 }
 
-.services h2 {
+.services-header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+}
+
+.services-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.services-header p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .service-grid {
@@ -451,20 +463,56 @@ p {
 .service-card {
   background-color: var(--card-bg);
   border-radius: 8px;
-  padding: 1.5rem;
+  padding: 2rem;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  color: var(--text-color);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--primary-color);
+  transform: scaleX(0);
+  transform-origin: right;
   transition: transform 0.3s ease;
 }
 
 .service-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+}
+
+.service-card:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .service-card i {
   font-size: 2.5rem;
   color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
   margin-bottom: 1rem;
+  color: var(--light-text);
+}
+
+.service-card p {
+  color: var(--text-muted);
+  margin-bottom: 0;
 }
 
 @media (min-width: 576px) {
@@ -472,8 +520,12 @@ p {
     padding: 5rem 0;
   }
 
-  .services h2 {
-    margin-bottom: 3rem;
+  .services-header h1 {
+    font-size: 3rem;
+  }
+
+  .services-header p {
+    font-size: 1.25rem;
   }
 
   .service-grid {
@@ -481,12 +533,36 @@ p {
     gap: 2rem;
   }
 
+  .service-card i {
+    font-size: 3rem;
+  }
+}
+
+/* For smaller mobile screens */
+@media (max-width: 375px) {
+  .services {
+    padding: 3rem 0;
+  }
+
+  .services-header {
+    margin-bottom: 2rem;
+  }
+
+  .services-header h1 {
+    font-size: 2rem;
+  }
+
+  .services-header p {
+    font-size: 1rem;
+  }
+
   .service-card {
-    padding: 2rem;
+    padding: 1.5rem;
   }
 
   .service-card i {
-    font-size: 3rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
   }
 }
 
