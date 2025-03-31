@@ -1,0 +1,227 @@
+---
+layout: default
+title: Wet Area Evaluation Form
+patriotic_page: true
+---
+
+<section class="page-header patriotic-header">
+  <div class="container">
+    <h1>Wet Area Evaluation Form</h1>
+  </div>
+</section>
+
+<section class="form-section patriotic-section">
+  <div class="container">
+    <p class="form-intro patriotic-text">Complete all required fields (*) to submit your wet area evaluation.</p>
+    
+    <form action="https://formsubmit.co/your-email@example.com" method="POST" class="job-form patriotic-form" enctype="multipart/form-data">
+      <!-- FormSubmit configuration -->
+      <input type="hidden" name="_captcha" value="true">
+      <input type="hidden" name="_subject" value="New Wet Area Evaluation Form Submission">
+      <input type="hidden" name="_next" value="{{ '/epoxy-job-sheets/thank-you' | absolute_url }}">
+      
+      <!-- Basic Information Section -->
+      <div class="form-section-header patriotic-header">
+        <h2>Basic Information</h2>
+      </div>
+      
+      <div class="form-group patriotic-field">
+        <label class="required" for="consultant-name">Consultant Name</label>
+        <input type="text" id="consultant-name" name="consultant-name" required>
+      </div>
+      
+      <div class="form-group patriotic-field">
+        <label class="required" for="client-name">Client Name</label>
+        <input type="text" id="client-name" name="client-name" required>
+      </div>
+      
+      <!-- Tub/Shower Details Section -->
+      <div class="form-section-header patriotic-header">
+        <h2>Tub/Shower Details</h2>
+      </div>
+      
+      <div class="form-group patriotic-field">
+        <label class="required" for="currently-installed">Currently Installed</label>
+        <select id="currently-installed" name="currently-installed" required>
+          <option value="">Select one option</option>
+          <option value="Tub Only">Tub Only</option>
+          <option value="Shower Only">Shower Only</option>
+          <option value="Tub/Shower Combo">Tub/Shower Combo</option>
+          <option value="Walk-in Shower">Walk-in Shower</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      
+      <div class="form-group patriotic-field">
+        <label class="required" for="approximate-age">Approximate Age of the Tub/Shower</label>
+        <input type="text" id="approximate-age" name="approximate-age" required>
+      </div>
+      
+      <div class="form-group patriotic-field">
+        <label class="required" for="current-material">Current Tub/Shower Material</label>
+        <select id="current-material" name="current-material" required>
+          <option value="">Select one option</option>
+          <option value="Fiberglass">Fiberglass</option>
+          <option value="Acrylic">Acrylic</option>
+          <option value="Ceramic Tile">Ceramic Tile</option>
+          <option value="Porcelain">Porcelain</option>
+          <option value="Natural Stone">Natural Stone</option>
+          <option value="Cast Iron">Cast Iron</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      
+      <div class="form-group patriotic-field">
+        <label class="required" for="tub-shower-size">Tub/Shower Size</label>
+        <input type="text" id="tub-shower-size" name="tub-shower-size" placeholder="e.g., 60x32 inches" required>
+      </div>
+      
+      <div class="form-group patriotic-field">
+        <label class="required" for="drain-location">Drain Location</label>
+        <select id="drain-location" name="drain-location" required>
+          <option value="">Select one option</option>
+          <option value="Left">Left</option>
+          <option value="Center">Center</option>
+          <option value="Right">Right</option>
+        </select>
+      </div>
+      
+      <!-- Condition Assessment Section -->
+      <div class="form-section-header patriotic-header">
+        <h2>Condition Assessment</h2>
+      </div>
+      
+      <!-- Tub/Shower Door -->
+      <div class="form-group-radio patriotic-field">
+        <label class="required">Is There a Tub/Shower Door</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="shower-door" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="shower-door" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <!-- Plumbing Access Door -->
+      <div class="form-group-radio patriotic-field">
+        <label class="required">Plumbing Access Door</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="plumbing-access" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="plumbing-access" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <!-- Mold/Mildew -->
+      <div class="form-group-radio patriotic-field">
+        <label class="required">Mold/Mildew</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="mold-mildew" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="mold-mildew" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <!-- Caulk Peeling -->
+      <div class="form-group-radio patriotic-field">
+        <label class="required">Caulk Peeling</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="caulk-peeling" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="caulk-peeling" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <!-- Loose/Missing Tiles -->
+      <div class="form-group-radio patriotic-field">
+        <label class="required">Loose/Missing Tiles</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="loose-tiles" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="loose-tiles" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <!-- Floor Damage -->
+      <div class="form-group-radio patriotic-field">
+        <label class="required">Floor Damage Around Tub/Shower Area</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="floor-damage" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="floor-damage" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <!-- Subfloor Soft/Spongy -->
+      <div class="form-group-radio patriotic-field">
+        <label class="required">Subfloor Soft/Spongy</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="subfloor-soft" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="subfloor-soft" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <!-- Photos Section -->
+      <div class="form-section-header patriotic-header">
+        <h2>Evaluation Photos</h2>
+      </div>
+      
+      <div class="form-group full-width patriotic-field">
+        <label class="required" for="overview-photos">Overview Photos</label>
+        <p class="form-help-text">Upload multiple photos showing the entire wet area</p>
+        <input type="file" id="overview-photos" name="overview-photos" multiple accept="image/*" required>
+      </div>
+      
+      <div class="form-group full-width patriotic-field">
+        <label class="required" for="damage-photos">Damage Photos (if applicable)</label>
+        <p class="form-help-text">Upload photos showing specific damage issues</p>
+        <input type="file" id="damage-photos" name="damage-photos" multiple accept="image/*">
+      </div>
+      
+      <!-- Additional Notes Section -->
+      <div class="form-group full-width patriotic-field">
+        <label for="additional-notes">Additional Notes</label>
+        <textarea id="additional-notes" name="additional-notes" rows="4" placeholder="Any additional information about the wet area evaluation"></textarea>
+      </div>
+      
+      <div class="form-group full-width">
+        <button type="submit" class="btn btn-patriotic">Submit Evaluation</button>
+      </div>
+    </form>
+  </div>
+</section>
