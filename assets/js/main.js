@@ -84,9 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (this.value === "Yes") {
           conditionalFieldContainer.style.display = "block"
-          if (radioName === "existing-coatings") {
-            conditionalField.focus()
-          }
+          conditionalField.focus()
         } else {
           conditionalFieldContainer.style.display = "none"
           conditionalField.value = ""
