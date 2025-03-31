@@ -20,42 +20,42 @@ title: Job Form
       <input type="hidden" name="_next" value="{{ '/epoxy-job-sheets/thank-you' | absolute_url }}">
       
       <!-- Job Information Section -->
-      <div class="form-section-header full-width">
+      <div class="form-section-header">
         <h2>Job Information</h2>
       </div>
       
       <div class="form-group">
-        <label for="job-name">Job Name & Number *</label>
+        <label class="required" for="job-name">Job Name & Number</label>
         <input type="text" id="job-name" name="job-name" required>
       </div>
       
       <div class="form-group">
-        <label for="job-date">Date *</label>
+        <label class="required" for="job-date">Date</label>
         <input type="date" id="job-date" name="job-date" required>
       </div>
       
       <div class="form-group full-width">
-        <label for="crew-names">Crew Names *</label>
+        <label class="required" for="crew-names">Crew Names</label>
         <input type="text" id="crew-names" name="crew-names" placeholder="Enter all crew member names separated by commas" required>
       </div>
       
       <!-- Job Measurements Section -->
-      <div class="form-section-header full-width">
+      <div class="form-section-header">
         <h2>Job Measurements</h2>
       </div>
       
       <div class="form-group">
-        <label for="total-hours">Total Hours Worked *</label>
+        <label class="required" for="total-hours">Total Hours Worked</label>
         <input type="number" id="total-hours" name="total-hours" min="0" step="0.5" required>
       </div>
       
       <div class="form-group">
-        <label for="total-sq-ft">Total Sq Ft *</label>
+        <label class="required" for="total-sq-ft">Total Sq Ft</label>
         <input type="number" id="total-sq-ft" name="total-sq-ft" min="0" required>
       </div>
       
       <div class="form-group">
-        <label for="vertical-sq-ft">Total Vertical Sq Ft (0 If None) *</label>
+        <label class="required" for="vertical-sq-ft">Total Vertical Sq Ft (0 If None)</label>
         <input type="number" id="vertical-sq-ft" name="vertical-sq-ft" min="0" value="0" required>
       </div>
       
@@ -70,12 +70,12 @@ title: Job Form
       </div>
       
       <!-- Product Information Section -->
-      <div class="form-section-header full-width">
+      <div class="form-section-header">
         <h2>Product Information</h2>
       </div>
       
       <div class="form-group">
-        <label for="product-type">Product Type *</label>
+        <label class="required" for="product-type">Product Type</label>
         <select id="product-type" name="product-type" required>
           <option value="">Select Product Type</option>
           <option value="Epoxy">Epoxy</option>
@@ -87,7 +87,7 @@ title: Job Form
       </div>
       
       <div class="form-group">
-        <label for="first-color">1st Color *</label>
+        <label class="required" for="first-color">1st Color</label>
         <input type="text" id="first-color" name="first-color" required>
       </div>
       
@@ -102,12 +102,12 @@ title: Job Form
       </div>
       
       <div class="form-group">
-        <label for="product-amount">Amount of Product Used (Total) *</label>
+        <label class="required" for="product-amount">Amount of Product Used (Total)</label>
         <input type="number" id="product-amount" name="product-amount" min="0" step="0.1" required>
       </div>
       
       <!-- Product Quantities Section -->
-      <div class="form-section-header full-width">
+      <div class="form-section-header">
         <h2>Product Quantities</h2>
       </div>
       
@@ -162,24 +162,24 @@ title: Job Form
       </div>
       
       <!-- Job Photos Section -->
-      <div class="form-section-header full-width">
+      <div class="form-section-header">
         <h2>Job Photos</h2>
       </div>
       
       <div class="form-group full-width">
-        <label for="before-pictures">Before Job Pictures *</label>
+        <label class="required" for="before-pictures">Before Job Pictures</label>
         <p class="form-help-text">Upload multiple photos showing the condition before work began</p>
         <input type="file" id="before-pictures" name="before-pictures" multiple accept="image/*" required>
       </div>
       
       <div class="form-group full-width">
-        <label for="progress-pictures">Job Progress Pictures *</label>
+        <label class="required" for="progress-pictures">Job Progress Pictures</label>
         <p class="form-help-text">Upload multiple photos showing the work in progress</p>
         <input type="file" id="progress-pictures" name="progress-pictures" multiple accept="image/*" required>
       </div>
       
       <div class="form-group full-width">
-        <label for="completion-pictures">Job Completion Pictures *</label>
+        <label class="required" for="completion-pictures">Job Completion Pictures</label>
         <p class="form-help-text">Upload multiple photos showing the completed job</p>
         <input type="file" id="completion-pictures" name="completion-pictures" multiple accept="image/*" required>
       </div>
