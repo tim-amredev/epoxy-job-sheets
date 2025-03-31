@@ -17,11 +17,9 @@ title: Rubber & Stone Job Form
     <!-- FormSubmit configuration -->
     <input type="hidden" name="_captcha" value="true">
     <input type="hidden" name="_subject" value="New Rubber & Stone Job Sheet Submission">
-    <input type="hidden" name="_next" value="{{ '/epoxy-job-sheets/thank-you' | absolute_url }}">
+    <input type="hidden" name="_next" value="https://tim-amredev.github.io/epoxy-job-sheets/thank-you">
     <!-- Honeypot field to prevent spam -->
     <input type="text" name="_honey" style="display:none">
-    <!-- Disable FormSubmit's default captcha page -->
-    <input type="hidden" name="_template" value="table">
     
     <!-- Job Information Section -->
     <div class="form-section-header">
@@ -164,26 +162,20 @@ title: Rubber & Stone Job Form
     </div>
     
     <div class="form-group full-width">
-      <label for="before-pictures">Before Job Pictures</label>
-      <p class="form-help-text">Upload photos showing the condition before work began (max 10MB total)</p>
-      <input type="file" id="before-pictures" name="before-pictures" accept="image/*">
-      <p class="form-help-text">For multiple photos, please upload to a service like Google Drive and share the link below</p>
+      <label for="before-pictures-link">Before Job Pictures</label>
+      <p class="form-help-text">Upload photos to a service like Google Drive and share the link below</p>
       <input type="text" id="before-pictures-link" name="before-pictures-link" placeholder="Paste your photo link here">
     </div>
     
     <div class="form-group full-width">
-      <label for="progress-pictures">Job Progress Pictures</label>
-      <p class="form-help-text">Upload photos showing the work in progress (max 10MB total)</p>
-      <input type="file" id="progress-pictures" name="progress-pictures" accept="image/*">
-      <p class="form-help-text">For multiple photos, please upload to a service like Google Drive and share the link below</p>
+      <label for="progress-pictures-link">Job Progress Pictures</label>
+      <p class="form-help-text">Upload photos to a service like Google Drive and share the link below</p>
       <input type="text" id="progress-pictures-link" name="progress-pictures-link" placeholder="Paste your photo link here">
     </div>
     
     <div class="form-group full-width">
-      <label for="completion-pictures">Job Completion Pictures</label>
-      <p class="form-help-text">Upload photos showing the completed job (max 10MB total)</p>
-      <input type="file" id="completion-pictures" name="completion-pictures" accept="image/*">
-      <p class="form-help-text">For multiple photos, please upload to a service like Google Drive and share the link below</p>
+      <label for="completion-pictures-link">Job Completion Pictures</label>
+      <p class="form-help-text">Upload photos to a service like Google Drive and share the link below</p>
       <input type="text" id="completion-pictures-link" name="completion-pictures-link" placeholder="Paste your photo link here">
     </div>
     
