@@ -1,0 +1,229 @@
+---
+layout: default
+title: Concrete Evaluation Form
+---
+
+<section class="page-header">
+  <div class="container">
+    <h1>Concrete Evaluation Form</h1>
+  </div>
+</section>
+
+<section class="form-section">
+  <div class="container">
+    <p class="form-intro">Complete all required fields (*) to submit your concrete evaluation.</p>
+    
+    <form action="https://formsubmit.co/your-email@example.com" method="POST" class="job-form" enctype="multipart/form-data">
+      <!-- FormSubmit configuration -->
+      <input type="hidden" name="_captcha" value="true">
+      <input type="hidden" name="_subject" value="New Concrete Evaluation Form Submission">
+      <input type="hidden" name="_next" value="{{ '/epoxy-job-sheets/thank-you' | absolute_url }}">
+      
+      <!-- Basic Information Section -->
+      <div class="form-section-header">
+        <h2>Basic Information</h2>
+      </div>
+      
+      <div class="form-group">
+        <label class="required" for="consultant-name">Consultant Name</label>
+        <input type="text" id="consultant-name" name="consultant-name" required>
+      </div>
+      
+      <div class="form-group">
+        <label class="required" for="client-name">Client Name</label>
+        <input type="text" id="client-name" name="client-name" required>
+      </div>
+      
+      <div class="form-group">
+        <label class="required" for="total-sq-ft">Total Sq. Ft.</label>
+        <input type="number" id="total-sq-ft" name="total-sq-ft" min="0" required>
+      </div>
+      
+      <div class="form-group">
+        <label class="required" for="concrete-age">Approximate Age of Concrete</label>
+        <input type="text" id="concrete-age" name="concrete-age" required>
+      </div>
+      
+      <!-- Concrete Type Section -->
+      <div class="form-section-header">
+        <h2>Concrete Type</h2>
+      </div>
+      
+      <div class="form-group full-width">
+        <label class="required">Concrete Type</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="concrete-type" value="Hard" required>
+            Hard
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="concrete-type" value="Soft">
+            Soft
+          </label>
+        </div>
+      </div>
+      
+      <!-- Concrete Condition Section -->
+      <div class="form-section-header">
+        <h2>Concrete Condition</h2>
+      </div>
+      
+      <!-- Pitting -->
+      <div class="form-group">
+        <label class="required">Pitting</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="pitting" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="pitting" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="pitting-sq-ft">Pitting (Est. Total Sq Ft)</label>
+        <input type="number" id="pitting-sq-ft" name="pitting-sq-ft" min="0">
+      </div>
+      
+      <!-- Hollow Spots -->
+      <div class="form-group">
+        <label class="required">Hollow Spots</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="hollow-spots" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="hollow-spots" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="hollow-spots-sq-ft">Hollow Spots (Est. Total Sq Ft)</label>
+        <input type="number" id="hollow-spots-sq-ft" name="hollow-spots-sq-ft" min="0">
+      </div>
+      
+      <!-- Chipping or Flaking -->
+      <div class="form-group">
+        <label class="required">Chipping or Flaking</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="chipping-flaking" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="chipping-flaking" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="chipping-flaking-sq-ft">Chipping/Flaking (Total Sq. Ft.)</label>
+        <input type="number" id="chipping-flaking-sq-ft" name="chipping-flaking-sq-ft" min="0">
+      </div>
+      
+      <!-- Cracks -->
+      <div class="form-group">
+        <label class="required">Cracks</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="cracks" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="cracks" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="cracks-linear-ft">Cracks (Total Linear Ft.)</label>
+        <input type="number" id="cracks-linear-ft" name="cracks-linear-ft" min="0">
+      </div>
+      
+      <!-- Heaving or Settling -->
+      <div class="form-group">
+        <label class="required">Heaving or Settling</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="heaving-settling" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="heaving-settling" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="heaving-settling-inches">Height/Depth of Heaving/Settling (Total Inches)</label>
+        <input type="number" id="heaving-settling-inches" name="heaving-settling-inches" min="0" step="0.125">
+      </div>
+      
+      <!-- Moisture and Coating Section -->
+      <div class="form-section-header">
+        <h2>Moisture & Existing Coatings</h2>
+      </div>
+      
+      <div class="form-group">
+        <label class="required" for="moisture-content">Moisture Content</label>
+        <input type="text" id="moisture-content" name="moisture-content" required>
+      </div>
+      
+      <div class="form-group">
+        <label class="required">Existing Coatings</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="existing-coatings" value="Yes" required>
+            Yes
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="existing-coatings" value="No">
+            No
+          </label>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="coating-type">If Yes What Type of Coating</label>
+        <input type="text" id="coating-type" name="coating-type">
+      </div>
+      
+      <!-- Photos Section -->
+      <div class="form-section-header">
+        <h2>Evaluation Photos</h2>
+      </div>
+      
+      <div class="form-group full-width">
+        <label class="required" for="overview-photos">Overview Photos</label>
+        <p class="form-help-text">Upload multiple photos showing the overall concrete area</p>
+        <input type="file" id="overview-photos" name="overview-photos" multiple accept="image/*" required>
+      </div>
+      
+      <div class="form-group full-width">
+        <label class="required" for="damage-photos">Damage/Issue Photos</label>
+        <p class="form-help-text">Upload photos showing specific damage or issues (cracks, pitting, etc.)</p>
+        <input type="file" id="damage-photos" name="damage-photos" multiple accept="image/*" required>
+      </div>
+      
+      <!-- Additional Notes Section -->
+      <div class="form-group full-width">
+        <label for="additional-notes">Additional Notes</label>
+        <textarea id="additional-notes" name="additional-notes" rows="4" placeholder="Any additional information about the concrete evaluation"></textarea>
+      </div>
+      
+      <div class="form-group full-width">
+        <button type="submit" class="btn btn-primary">Submit Evaluation</button>
+      </div>
+    </form>
+  </div>
+</section>
+
