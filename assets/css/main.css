@@ -150,14 +150,14 @@ img {
 
 /* Logo Styling */
 .logo-image {
-  max-height: 120px; /* Increased from 80px */
+  max-height: 180px; /* Increased from 80px */
   width: auto; /* This ensures the width adjusts proportionally to the height */
   object-fit: contain; /* This ensures the image maintains its aspect ratio */
   background-color: transparent;
 }
 
 .footer-logo .logo-image {
-  max-height: 90px; /* Increased from 60px */
+  max-height: 120px; /* Increased from 60px */
 }
 
 /* Typography */
@@ -272,11 +272,11 @@ p {
   }
 
   .logo-image {
-    max-height: 80px;
+    max-height: 180px;
   }
 
   .footer-logo .logo-image {
-    max-height: 70px;
+    max-height: 120px;
   }
 }
 
@@ -303,7 +303,7 @@ p {
 }
 
 .logo img {
-  max-height: 120px; /* Match the logo-image max-height */
+  max-height: 180px; /* Match the logo-image max-height */
   background-color: transparent;
 }
 
