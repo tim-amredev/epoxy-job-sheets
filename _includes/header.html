@@ -1,28 +1,28 @@
 <header class="site-header">
 <div class="container">
   <div class="logo">
-    <a href="{{ '/' | relative_url }}">
-      <img src="{{ '/assets/images/logo.svg' | relative_url }}" alt="Epoxy Floor Experts Logo" class="logo-image">
+    <a href="{{ '/' | relative_url }}" aria-label="Epoxy Floor Experts Home">
+      <img src="{{ '/assets/images/logo.svg' | relative_url }}" alt="Epoxy Floor Experts Logo" class="logo-image" width="180" height="60" loading="eager">
     </a>
   </div>
   <nav class="main-nav">
-    <button class="menu-toggle" aria-label="Toggle Menu">
+    <button class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false" aria-controls="nav-links">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
     </button>
-    <ul class="nav-links">
+    <ul class="nav-links" id="nav-links">
       <li><a href="{{ '/' | relative_url }}">Home</a></li>
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle">Install <i class="fas fa-chevron-down"></i></a>
-        <ul class="dropdown-menu">
+        <a href="#" class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">Install <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
+        <ul class="dropdown-menu" role="menu">
           <li><a href="{{ '/job-form' | relative_url }}">Epoxy Job Sheet</a></li>
           <li><a href="{{ '/rubber-stone-job-form' | relative_url }}">Rubber & Stone Job Sheet</a></li>
         </ul>
       </li>
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle">Brand Rep <i class="fas fa-chevron-down"></i></a>
-        <ul class="dropdown-menu">
+        <a href="#" class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">Brand Rep <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
+        <ul class="dropdown-menu" role="menu">
           <li><a href="{{ '/concrete-evaluation' | relative_url }}">Concrete Evaluation</a></li>
           <li><a href="{{ '/roof-evaluation' | relative_url }}">Roof Evaluation</a></li>
           <li><a href="{{ '/wet-area-evaluation' | relative_url }}">Wet Area Evaluation</a></li>
