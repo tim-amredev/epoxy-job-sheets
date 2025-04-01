@@ -1,0 +1,22 @@
+{
+  "name": "Epoxy Floor Job Sheets",
+  "short_name": "Job Sheets",
+  "description": "Internal job sheet submission system for Epoxy Floor Experts employees",
+  "start_url": "/epoxy-job-sheets/",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#ff0000",
+  "icons": [
+    {
+      "src": "/epoxy-job-sheets/assets/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/epoxy-job-sheets/assets/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+
