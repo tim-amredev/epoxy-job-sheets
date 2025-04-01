@@ -12,6 +12,13 @@ markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-minifier # Added for minification
+
+# Jekyll Minifier
+jekyll-minifier:
+  compress_css: true
+  compress_javascript: true
+  exclude: ['*.xml', '*.json', '*.html']
 
 # Exclude from processing
 exclude:
