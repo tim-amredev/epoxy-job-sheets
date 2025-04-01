@@ -5,14 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
   
+  <!-- Favicon and Browser Icons -->
+  {% include favicon.html %}
+  
   <!-- Preconnect to external domains -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="preconnect" href="https://formsubmit.co" crossorigin>
   
   <!-- Web App Manifest -->
   <link rel="manifest" href="{{ '/manifest.json' | relative_url }}">
-  <meta name="theme-color" content="#ff0000">
-  <link rel="apple-touch-icon" href="{{ '/assets/images/icon-192.png' | relative_url }}">
   
   <!-- Critical CSS inline -->
   <style>
@@ -86,4 +87,3 @@
   {% include service-worker.html %}
 </body>
 </html>
-
