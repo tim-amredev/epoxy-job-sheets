@@ -1,205 +1,188 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Mobile menu toggle
-  const menuToggle = document.querySelector(".menu-toggle")
-  const navLinks = document.querySelector(".nav-links")
+// Use IIFE to avoid polluting global namespace
+;(() => {
+  // Wait for DOM to be fully loaded
+  document.addEventListener("DOMContentLoaded", () => {
+    // Initialize components with a small delay to prioritize rendering
+    setTimeout(initComponents, 100)
+  })
 
-  if (menuToggle && navLinks) {
-    menuToggle.addEventListener("click", () => {
+  // Initialize all interactive components
+  function initComponents() {
+    initMobileMenu()
+    initDropdowns()
+    initFormValidation()
+    initFileValidation()
+    initConditionalFields()
+
+    // Only initialize patriotic theme if needed
+    if (document.body.classList.contains("patriotic-theme")) {
+      initPatrioticTheme()
+    }
+  }
+
+  // Mobile menu functionality
+  function initMobileMenu() {
+    const menuToggle = document.querySelector(".menu-toggle")
+    const navLinks = document.querySelector(".nav-links")
+
+    if (!menuToggle || !navLinks) return
+
+    // Toggle menu on click
+    menuToggle.addEventListener("click", function () {
       navLinks.classList.toggle("active")
 
       // Toggle aria-expanded attribute
-      const expanded = menuToggle.getAttribute("aria-expanded") === "true" || false
-      menuToggle.setAttribute("aria-expanded", !expanded)
+      const expanded = this.getAttribute("aria-expanded") === "true" || false
+      this.setAttribute("aria-expanded", !expanded)
+    })
+
+    // Close mobile menu when clicking outside
+    document.addEventListener("click", (event) => {
+      if (navLinks.classList.contains("active") && !event.target.closest(".main-nav")) {
+        navLinks.classList.remove("active")
+        if (menuToggle) {
+          menuToggle.setAttribute("aria-expanded", "false")
+        }
+      }
     })
   }
 
-  // Close mobile menu when clicking outside
-  document.addEventListener("click", (event) => {
-    if (navLinks && navLinks.classList.contains("active") && !event.target.closest(".main-nav")) {
-      navLinks.classList.remove("active")
-      if (menuToggle) {
-        menuToggle.setAttribute("aria-expanded", "false")
-      }
-    }
-  })
+  // Dropdown menu functionality
+  function initDropdowns() {
+    const dropdownToggles = document.querySelectorAll(".dropdown-toggle")
 
-  // Mobile dropdown toggle
-  const dropdownToggles = document.querySelectorAll(".dropdown-toggle")
+    dropdownToggles.forEach((toggle) => {
+      toggle.addEventListener("click", function (e) {
+        // Only prevent default on mobile
+        if (window.innerWidth <= 768) {
+          e.preventDefault()
 
-  dropdownToggles.forEach((toggle) => {
-    toggle.addEventListener("click", function (e) {
-      if (window.innerWidth <= 768) {
-        e.preventDefault()
-        this.closest(".dropdown").classList.toggle("active")
-      }
+          // Close other open dropdowns first
+          const allDropdowns = document.querySelectorAll(".dropdown")
+          allDropdowns.forEach(function (dropdown) {
+            if (dropdown !== this.closest(".dropdown") && dropdown.classList.contains("active")) {
+              dropdown.classList.remove("active")
+              dropdown.querySelector(".dropdown-toggle").setAttribute("aria-expanded", "false")
+            }
+          }, this)
+
+          // Toggle current dropdown
+          const dropdown = this.closest(".dropdown")
+          dropdown.classList.toggle("active")
+
+          // Update aria attributes
+          const expanded = this.getAttribute("aria-expanded") === "true" || false
+          this.setAttribute("aria-expanded", !expanded)
+        }
+      })
     })
-  })
+  }
 
   // Form validation
-  const forms = document.querySelectorAll("form")
+  function initFormValidation() {
+    const forms = document.querySelectorAll("form")
 
-  forms.forEach((form) => {
-    form.addEventListener("submit", (event) => {
-      const requiredFields = form.querySelectorAll("[required]")
-      let isValid = true
+    forms.forEach((form) => {
+      // Use passive event listener for better performance
+      form.addEventListener("submit", function (event) {
+        let isValid = true
+        const requiredFields = this.querySelectorAll("[required]")
 
-      requiredFields.forEach((field) => {
-        if (!field.value.trim()) {
-          isValid = false
-          field.classList.add("error")
-        } else {
-          field.classList.remove("error")
+        requiredFields.forEach((field) => {
+          if (!field.value.trim()) {
+            isValid = false
+            field.classList.add("error")
+
+            // Add shake animation for better feedback
+            field.classList.add("shake")
+            setTimeout(() => {
+              field.classList.remove("shake")
+            }, 500)
+          } else {
+            field.classList.remove("error")
+          }
+        })
+
+        if (!isValid) {
+          event.preventDefault()
+
+          // Scroll to first error with smooth behavior
+          const firstError = form.querySelector(".error")
+          if (firstError) {
+            firstError.focus()
+            window.scrollTo({
+              top: firstError.getBoundingClientRect().top + window.pageYOffset - 100,
+              behavior: "smooth",
+            })
+          }
+
+          // Show error message
+          alert("Please fill in all required fields.")
         }
       })
-
-      if (!isValid) {
-        event.preventDefault()
-        alert("Please fill in all required fields.")
-      }
     })
-  })
+  }
 
   // File size validation
-  const fileInputs = document.querySelectorAll('input[type="file"]')
-  const MAX_FILE_SIZE = 5 * 1024 * 1024 // 5MB in bytes
+  function initFileValidation() {
+    const fileInputs = document.querySelectorAll('input[type="file"]')
+    const MAX_FILE_SIZE = 5 * 1024 * 1024 // 5MB in bytes
 
-  fileInputs.forEach((input) => {
-    const sizeWarning = document.createElement("div")
-    sizeWarning.className = "file-size-warning"
-    sizeWarning.style.display = "none"
-    sizeWarning.style.color = "#ff0000"
-    sizeWarning.style.marginTop = "5px"
-    sizeWarning.textContent = "Warning: File exceeds 5MB limit. Please use a smaller file or provide a link instead."
+    fileInputs.forEach((input) => {
+      // Create warning element only once
+      const sizeWarning = document.createElement("div")
+      sizeWarning.className = "file-size-warning"
+      sizeWarning.style.display = "none"
+      sizeWarning.style.color = "#ff0000"
+      sizeWarning.style.marginTop = "5px"
+      sizeWarning.textContent = "Warning: File exceeds 5MB limit. Please use a smaller file or provide a link instead."
 
-    input.parentNode.insertBefore(sizeWarning, input.nextSibling)
+      input.parentNode.insertBefore(sizeWarning, input.nextSibling)
 
-    input.addEventListener("change", function () {
-      const file = this.files[0]
-      if (file && file.size > MAX_FILE_SIZE) {
-        sizeWarning.style.display = "block"
-      } else {
-        sizeWarning.style.display = "none"
-      }
+      // Use passive event listener for better performance
+      input.addEventListener(
+        "change",
+        function () {
+          const file = this.files[0]
+          if (file && file.size > MAX_FILE_SIZE) {
+            sizeWarning.style.display = "block"
+          } else {
+            sizeWarning.style.display = "none"
+          }
+        },
+        { passive: true },
+      )
     })
-  })
-
-  // Conditional fields in concrete evaluation form
-  const concreteConditionalFields = {
-    pitting: "pitting-sq-ft",
-    "hollow-spots": "hollow-spots-sq-ft",
-    "chipping-flaking": "chipping-flaking-sq-ft",
-    cracks: "cracks-linear-ft",
-    "heaving-settling": "heaving-settling-inches",
-    "existing-coatings": "coating-type",
   }
 
-  // Conditional fields in roof evaluation form
-  const roofConditionalFields = {
-    "roof-leaking": "leak-location",
-    "interior-water-damage": "water-damage-location",
-    "ceiling-stained": "ceiling-stain-location",
-    "ceiling-bubbling": "ceiling-bubbling-location",
-    "rotted-wood": "rotted-wood-location",
-    "damaged-rafters": "damaged-rafters-location",
-  }
+  // Conditional fields functionality
+  function initConditionalFields() {
+    // Combine all conditional fields
+    const conditionalFields = {
+      // Concrete evaluation form
+      pitting: "pitting-sq-ft",
+      "hollow-spots": "hollow-spots-sq-ft",
+      "chipping-flaking": "chipping-flaking-sq-ft",
+      cracks: "cracks-linear-ft",
+      "heaving-settling": "heaving-settling-inches",
+      "existing-coatings": "coating-type",
 
-  // Conditional fields in window evaluation form
-  const windowConditionalFields = {
-    "rotten-wood": "rotten-wood-location",
-  }
+      // Roof evaluation form
+      "roof-leaking": "leak-location",
+      "interior-water-damage": "water-damage-location",
+      "ceiling-stained": "ceiling-stain-location",
+      "ceiling-bubbling": "ceiling-bubbling-location",
+      "rotted-wood": "rotted-wood-location",
+      "damaged-rafters": "damaged-rafters-location",
 
-  // Combine all conditional fields
-  const allConditionalFields = {
-    ...concreteConditionalFields,
-    ...roofConditionalFields,
-    ...windowConditionalFields,
-  }
-
-  // Set up event listeners for radio buttons
-  Object.keys(allConditionalFields).forEach((radioName) => {
-    const radioButtons = document.querySelectorAll(`input[name="${radioName}"]`)
-    const conditionalFieldId = allConditionalFields[radioName]
-
-    radioButtons.forEach((radio) => {
-      radio.addEventListener("change", function () {
-        const conditionalField = document.getElementById(conditionalFieldId)
-        if (!conditionalField) return
-
-        const conditionalFieldContainer = conditionalField.closest(".form-group")
-        if (!conditionalFieldContainer) return
-
-        if (this.value === "Yes") {
-          conditionalFieldContainer.style.display = "block"
-          conditionalField.focus()
-        } else {
-          conditionalFieldContainer.style.display = "none"
-          conditionalField.value = ""
-        }
-      })
-    })
-  })
-
-  // Initialize conditional fields on page load
-  Object.keys(allConditionalFields).forEach((radioName) => {
-    const radioChecked = document.querySelector(`input[name="${radioName}"]:checked`)
-    if (radioChecked) {
-      const event = new Event("change")
-      radioChecked.dispatchEvent(event)
-    } else {
-      const conditionalFieldId = allConditionalFields[radioName]
-      const conditionalField = document.getElementById(conditionalFieldId)
-      if (conditionalField) {
-        const conditionalFieldContainer = conditionalField.closest(".form-group")
-        if (conditionalFieldContainer) {
-          conditionalFieldContainer.style.display = "none"
-        }
-      }
+      // Window evaluation form
+      "rotten-wood": "rotten-wood-location",
     }
-  })
 
-  // Add patriotic theme animations
-  if (document.body.classList.contains("patriotic-theme")) {
-    // Add subtle star animation to patriotic headers
-    const patrioticHeaders = document.querySelectorAll(".patriotic-header")
-    patrioticHeaders.forEach((header) => {
-      header.classList.add("animated")
-    })
-  }
-
-  // Enhanced animations for patriotic theme
-  if (document.body.classList.contains("patriotic-theme")) {
-    // Add subtle star animation to patriotic headers
-    const patrioticHeaders = document.querySelectorAll(".patriotic-header")
-    patrioticHeaders.forEach((header) => {
-      // Create and append stars
-      for (let i = 0; i < 5; i++) {
-        const star = document.createElement("span")
-        star.className = "floating-star"
-        star.style.left = `${Math.random() * 100}%`
-        star.style.top = `${Math.random() * 100}%`
-        star.style.animationDelay = `${Math.random() * 5}s`
-        star.style.opacity = `${0.1 + Math.random() * 0.3}`
-        star.style.fontSize = `${10 + Math.random() * 20}px`
-        star.innerHTML = "★"
-        header.appendChild(star)
-      }
-    })
-
-    // Add animation to form section headers
-    const sectionHeaders = document.querySelectorAll(".form-section-header.patriotic-header")
-    sectionHeaders.forEach((header) => {
-      header.addEventListener("mouseenter", () => {
-        header.classList.add("header-glow")
-      })
-      header.addEventListener("mouseleave", () => {
-        header.classList.remove("header-glow")
-      })
-    })
-
-    // Enhance conditional field animations
-    Object.keys(allConditionalFields).forEach((radioName) => {
+    // Set up event listeners for radio buttons
+    Object.keys(conditionalFields).forEach((radioName) => {
       const radioButtons = document.querySelectorAll(`input[name="${radioName}"]`)
-      const conditionalFieldId = allConditionalFields[radioName]
+      const conditionalFieldId = conditionalFields[radioName]
 
       radioButtons.forEach((radio) => {
         radio.addEventListener("change", function () {
@@ -211,10 +194,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
           if (this.value === "Yes") {
             conditionalFieldContainer.style.display = "block"
-            conditionalFieldContainer.classList.add("fade-in")
             conditionalField.focus()
           } else {
-            conditionalFieldContainer.classList.remove("fade-in")
             conditionalFieldContainer.style.display = "none"
             conditionalField.value = ""
           }
@@ -222,41 +203,63 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     })
 
-    // Add subtle hover effect to form groups
-    const formGroups = document.querySelectorAll(".patriotic-form .form-group, .patriotic-form .form-group-radio")
-    formGroups.forEach((group) => {
-      group.addEventListener("mouseenter", () => {
-        group.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.08)"
-      })
-      group.addEventListener("mouseleave", () => {
-        group.style.boxShadow = "none"
-      })
-    })
-
-    // Add custom radio button behavior
-    const radioLabels = document.querySelectorAll(".patriotic-form .radio-label")
-    radioLabels.forEach((label) => {
-      const radio = label.querySelector("input[type='radio']")
-      if (!radio) return
-
-      radio.addEventListener("change", function () {
-        if (this.checked) {
-          const name = this.getAttribute("name")
-          document.querySelectorAll(`input[name="${name}"]`).forEach((r) => {
-            const parentLabel = r.closest(".radio-label")
-            if (parentLabel) {
-              parentLabel.classList.remove("checked")
-            }
-          })
-          label.classList.add("checked")
+    // Initialize conditional fields on page load
+    Object.keys(conditionalFields).forEach((radioName) => {
+      const radioChecked = document.querySelector(`input[name="${radioName}"]:checked`)
+      if (radioChecked) {
+        // Use synthetic event to trigger change handler
+        const event = new Event("change")
+        radioChecked.dispatchEvent(event)
+      } else {
+        const conditionalFieldId = conditionalFields[radioName]
+        const conditionalField = document.getElementById(conditionalFieldId)
+        if (conditionalField) {
+          const conditionalFieldContainer = conditionalField.closest(".form-group")
+          if (conditionalFieldContainer) {
+            conditionalFieldContainer.style.display = "none"
+          }
         }
-      })
-
-      // Initialize checked state
-      if (radio.checked) {
-        label.classList.add("checked")
       }
     })
   }
-})
+
+  // Patriotic theme enhancements
+  function initPatrioticTheme() {
+    // Add subtle star animation to patriotic headers
+    const patrioticHeaders = document.querySelectorAll(".patriotic-header")
+
+    patrioticHeaders.forEach((header) => {
+      // Create and append a limited number of stars for performance
+      for (let i = 0; i < 3; i++) {
+        const star = document.createElement("span")
+        star.className = "floating-star"
+        star.style.left = `${Math.random() * 100}%`
+        star.style.top = `${Math.random() * 100}%`
+        star.style.animationDelay = `${Math.random() * 5}s`
+        star.style.opacity = `${0.1 + Math.random() * 0.3}`
+        star.style.fontSize = `${10 + Math.random() * 10}px`
+        star.innerHTML = "★"
+        header.appendChild(star)
+      }
+    })
+
+    // Add subtle hover effect to form groups using event delegation
+    const patrioticForm = document.querySelector(".patriotic-form")
+    if (patrioticForm) {
+      patrioticForm.addEventListener("mouseover", (e) => {
+        const formGroup = e.target.closest(".form-group, .form-group-radio")
+        if (formGroup) {
+          formGroup.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.08)"
+        }
+      })
+
+      patrioticForm.addEventListener("mouseout", (e) => {
+        const formGroup = e.target.closest(".form-group, .form-group-radio")
+        if (formGroup) {
+          formGroup.style.boxShadow = "none"
+        }
+      })
+    }
+  }
+})()
 
