@@ -3,8 +3,8 @@ title: Epoxy Floor Job Sheets
 email: forms@epoxyfloorexperts.org
 description: >-
   Internal job sheet submission system for Epoxy Floor Experts employees.
-baseurl: "/epoxy-job-sheets" # the subpath of your site
-url: "https://tim-amredev.github.io" # the base hostname & protocol for your site
+baseurl: "/forms" # Changed from "/epoxy-job-sheets" to "/forms" for the new subdirectory
+url: "https://epoxyfloorexperts.org" # Changed from GitHub Pages URL to your domain
 permalink: pretty
 
 # Build settings
@@ -12,7 +12,7 @@ markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-minifier # Added for minification
+  - jekyll-minifier
 
 # Jekyll Minifier
 jekyll-minifier:
@@ -28,4 +28,6 @@ exclude:
   - vendor
   - .gitignore
   - README.md
+  - FAVICON-INSTRUCTIONS.md
+  - assets/js/generate-favicons.js
 
