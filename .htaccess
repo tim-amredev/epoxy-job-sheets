@@ -1,13 +1,3 @@
-# BEGIN Epoxy Job Sheets
-<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteBase /forms/
-RewriteRule ^index\.php$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /forms/index.php [L]
-</IfModule>
-
 # Enable browser caching
 <IfModule mod_expires.c>
   ExpiresActive On
@@ -67,5 +57,4 @@ RewriteRule . /forms/index.php [L]
   # Don't allow site to be opened in iframe
   Header set X-Frame-Options "SAMEORIGIN"
 </IfModule>
-# END Epoxy Job Sheets
 
