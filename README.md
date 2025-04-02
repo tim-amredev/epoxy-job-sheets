@@ -1,27 +1,34 @@
-# Epoxy Floor Experts - Jekyll Site
+# Epoxy Floor Job Sheets
 
-This is the Jekyll-based website for Epoxy Floor Experts, featuring job forms with FormSubmit integration and captcha.
+Internal job sheet submission system for Epoxy Floor Experts employees.
 
-## Setup Instructions
+## WordPress Integration
 
-1. Make sure you have Ruby and Jekyll installed on your system.
-2. Clone this repository to your local machine.
-3. Run `bundle install` to install the required gems.
-4. Run `bundle exec jekyll serve` to start the development server.
-5. Visit `http://localhost:4000` in your browser to view the site.
+This Jekyll site is designed to be integrated with WordPress on epoxyfloorexperts.org. Follow these steps to set up the integration:
 
-## Deployment
+### 1. Install the Integration Plugin
 
-This site is configured to be deployed on GitHub Pages. Simply push your changes to the main branch, and GitHub will automatically build and deploy your site.
+1. Create a new directory in your WordPress plugins folder: `wp-content/plugins/epoxy-job-sheets/`
+2. Copy the `wordpress-integration.php` file to this directory
+3. Create a subdirectory: `wp-content/plugins/epoxy-job-sheets/jekyll/`
+4. This is where the Jekyll site will be deployed
 
-## FormSubmit Integration
+### 2. Set Up GitHub Actions Deployment
 
-The site uses FormSubmit for form handling. Make sure to replace `your-email@example.com` in the form action URLs with your actual email address.
+1. In your GitHub repository, go to Settings > Secrets and add the following secrets:
+   - `FTP_SERVER`: Your WordPress hosting FTP server
+   - `FTP_USERNAME`: Your FTP username
+   - `FTP_PASSWORD`: Your FTP password
 
-## Customization
+2. Push to the main branch to trigger the deployment workflow
 
-- Update the `_config.yml` file to change site settings.
-- Modify the HTML files in the root directory to update page content.
-- Edit the CSS in `assets/css/main.css` to customize the site's appearance.
-- Add or modify JavaScript in `assets/js/main.js` as needed.
+### 3. Activate the Plugin
+
+1. Log in to your WordPress admin
+2. Go to Plugins and activate "Epoxy Job Sheets Integration"
+3. A new page called "Epoxy Job Sheets" will be created at /forms/
+
+### 4. Using the Shortcode
+
+You can embed the job sheets app on any page using the shortcode:
 
