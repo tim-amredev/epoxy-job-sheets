@@ -2,33 +2,33 @@
   "name": "Epoxy Floor Job Sheets",
   "short_name": "Job Sheets",
   "description": "Internal job sheet submission system for Epoxy Floor Experts employees",
-  "start_url": "/epoxy-job-sheets/",
+  "start_url": "/forms/",
   "display": "standalone",
   "background_color": "#121212",
   "theme_color": "#ff0000",
   "icons": [
     {
-      "src": "/epoxy-job-sheets/assets/images/favicon-16x16.png",
+      "src": "/forms/assets/images/favicon-16x16.png",
       "sizes": "16x16",
       "type": "image/png"
     },
     {
-      "src": "/epoxy-job-sheets/assets/images/favicon-32x32.png",
+      "src": "/forms/assets/images/favicon-32x32.png",
       "sizes": "32x32",
       "type": "image/png"
     },
     {
-      "src": "/epoxy-job-sheets/assets/images/android-chrome-192x192.png",
+      "src": "/forms/assets/images/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/epoxy-job-sheets/assets/images/android-chrome-512x512.png",
+      "src": "/forms/assets/images/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "/epoxy-job-sheets/assets/images/logo.svg",
+      "src": "/forms/assets/images/logo.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"
