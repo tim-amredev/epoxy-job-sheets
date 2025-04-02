@@ -1,21 +1,17 @@
 // Service Worker for Epoxy Job Sheets
 const CACHE_NAME = "epoxy-job-sheets-v1"
-const BASE_PATH = "/forms" // Updated from '/epoxy-job-sheets'
 const ASSETS_TO_CACHE = [
-  BASE_PATH + "/",
-  BASE_PATH + "/index.html",
-  BASE_PATH + "/assets/css/main.css",
-  BASE_PATH + "/assets/js/main.js",
-  BASE_PATH + "/assets/images/logo.svg",
+  "/",
+  "/index.html",
+  "/assets/css/main.css",
+  "/assets/js/main.js",
+  "/assets/images/logo.svg",
   "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css",
-  BASE_PATH + "/404.html",
+  "/404.html",
 ]
 
 // Import localforage (assuming it's available via CDN or similar)
 importScripts("https://unpkg.com/localforage/dist/localforage.js")
-
-// Declare localforage to avoid undefined variable errors.
-const localforage = self.localforage
 
 // Install event - cache assets
 self.addEventListener("install", (event) => {
@@ -86,7 +82,7 @@ self.addEventListener("fetch", (event) => {
         .catch(() => {
           // If fetch fails (offline), try to return a fallback
           if (event.request.url.indexOf(".html") > -1) {
-            return caches.match(BASE_PATH + "/404.html")
+            return caches.match("/404.html")
           }
           return null
         })
